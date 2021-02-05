@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeOverviewComponent } from './home-overview/home-overview.component';
-import { HomeRoutingModule } from './home-routing.module';
 
+import { HomeRoutingModule } from './home-routing.module';
+import { OverviewComponent } from './overview/overview.component';
+import { HomeComponent } from './home/home.component';
+import { PatchNotesComponent } from './patch-notes/patch-notes.component';
 
 
 @NgModule({
-  declarations: [
-    HomeOverviewComponent
-  ],
+  declarations: [OverviewComponent, HomeComponent, PatchNotesComponent],
   imports: [
     CommonModule,
     HomeRoutingModule

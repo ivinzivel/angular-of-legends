@@ -1,0 +1,233 @@
+<span class="main-layout-horizontal-line"></span>
+
+<header class="main-header">
+
+    <nav>
+
+        <ul>
+
+            <li> 
+                
+                <img class="play-button-shape" src="../../assets/images/play-button/play-button-shape.png">
+                <img class="play-button-click-area" src="../../assets/images/play-button/play-button-click-area.png">
+                <span class="play-button-text">Play</span>
+            
+            </li>
+            <li routerLink="home" routerLinkActive="item-background-active" class="item-background-hover"> <a class="item-link-formated">Home</a> </li>
+            <li class="item-background-hover"> <a class="item-link-formated">Tft</a> </li>
+            <li class="item-background-hover"> <a class="item-link-formated">Clash</a> </li>
+
+
+        </ul>
+
+        <ul class="right-list">
+
+            <li class="item-background-hover">  <a> <img src="../../assets/images/header-icons/profile.png"> </a> </li>
+            <li class="item-background-hover">  <a> <img src="../../assets/images/header-icons/collection.png"> </a> </li>
+            <li class="item-background-hover">  <a> <img src="../../assets/images/header-icons/booty.png"> </a> </li>
+            <li class="item-background-hover">  <a> <img src="../../assets/images/header-icons/shop.png"> </a> </li>
+            <li> <img class="divider" src="../../assets/images/header-icons/divider.png"> </li>
+            <li class="money">
+            
+               <div class="riot-points">
+
+                <img src="../../assets/images/header-icons/riot-points.png">
+                <span>88</span>
+
+               </div> 
+            
+               <div class="blue-essence">
+
+                <img src="../../assets/images/header-icons/blue-essence.png">
+                <span>2528</span>
+
+               </div> 
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<aside class="main-aside">
+
+    <div class="user-information">
+
+        <img src="../../assets/images/aside-icons/avatar-wrapper.png">
+        <span class="user-level">287</span>
+
+        <div class="user-wrapper">
+
+            <span class="user-nickname truncate">Ivinzivel</span>
+
+            <div class="user-status">
+
+                <span class="user-status-circle" [ngClass]="{'user-status-circle-afk': onlineStatus == false}" (click)="changeOnlineStatus()"></span>
+                <span class="user-status-message truncate" [ngClass]="{'user-status-message-afk': onlineStatus == false}">"status"</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="menu-aside">
+
+        <span>Social</span>
+        <div class="menu-aside-icons-wrapper">
+
+            <img src="../../assets/images/aside-icons/add-friend.png">
+            <img src="../../assets/images/aside-icons/add-folder.png">
+            <img src="../../assets/images/aside-icons/options.png">
+            <img src="../../assets/images/aside-icons/search.png">
+
+        </div>
+    
+    </div>
+
+    <div class="frined-list">
+
+        <div (scroll)="ajustPopoversPosition()" id="scrollable-area" class="scrollable-area">
+
+            <div class="group-area">
+
+                <ul>
+
+                    <li> 
+                    
+                        <img src="../../assets/images/aside-icons/main-group-flag.png">
+                        <div class="group-information-wrapper">
+                            <span class="group-abreviation">XXXX</span>
+                            <span class="group-name truncate">Group Name</span>
+                        </div>
+                    
+                    </li>
+
+                    <li> 
+                    
+                        <img src="../../assets/images/aside-icons/group-flag.png">
+                        <div class="group-information-wrapper">
+                            <span class="group-abreviation">XXXX</span>
+                            <span class="group-name truncate">Group Name</span>
+                        </div>
+                    
+                    </li>
+
+                    <li> 
+                    
+                        <img src="../../assets/images/aside-icons/group-flag.png">
+                        <div class="group-information-wrapper">
+                            <span class="group-abreviation">XXXX</span>
+                            <span class="group-name truncate">Group Name</span>
+                        </div>
+                    
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="friends-agroupment">
+
+                <ul>
+
+                    <div *ngFor="let friend of friends" id="popover{{friend.id}}" class="friend-popover" style="background-image: url({{friend.profileBackground}})">
+
+                        <div  class="popover-information">
+
+                            <div class="popover-profile-image-wrapper">
+                                <img src="./../../../assets/images/aside-icons/platina.png" class="popover-rank-image">
+                                <img src="{{ friend.profilePicture }}" class="popover-profile-image">
+                                <span [ngClass]="{'one': friend.rankTier == 'I', 'two': friend.rankTier == 'II', 'three': friend.rankTier == 'III', 'four': friend.rankTier == 'IV' }" class="tier">{{ friend.rankTier }}</span>
+                            </div>
+
+                            <div class="popover-friend-informations">
+
+                                <span class="popover-friend-name">{{ friend.name }}</span>
+                                <span class="popover-friend-group-abreviation">Group</span>
+
+                                <span class="popover-friend-server-information">{{ friend.name }} #BR1</span>
+
+                                <span class="popover-friend-rank">{{ friend.rank }}{{ friend.rankTier }} (Solo/Duo)</span>
+
+                            </div>
+
+                            <div class="popover-status">
+
+                                <span>
+
+                                    <div class="friend-status-circle friend-status-circle-queue"></div>
+
+                                    <p>( Ranqueada )</p>
+
+                                    <p class="time">20:00</p>
+
+                                </span>
+                                <span>
+
+                                    <img src="./../../../assets/images/aside-icons/status-message.png">
+
+                                    <p>"Status message"</p>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <li (click)="changeGeralVisibility()">General (20/{{amigosTotal}})</li>
+                    <ul [ngClass]="{'friends-sublist-open': geral == true}" class="friends-sublist">
+
+                        <li *ngFor="let friend of friends; let i = index" id='friend{{friend.id}}' (click)="openChat(friend)" (mouseenter)="showPopover(friend.id)" (mouseleave)="hidePopover(friend.id)" >
+
+                            <span *ngIf="i == friends.length - 1">{{ ajustPopoversPosition() }}</span>
+
+                            <div class="friend-profile-image-border">
+                                <img src="{{friend.profilePicture}}" class="friend-profile-image">
+                            </div>
+                            <div [ngClass]="{'friend-status-circle-offline': friend.status == 1, 'friend-status-circle-queue': friend.status == 2,  'friend-status-circle-afk': friend.status == 3}" class="friend-status-circle"></div>
+
+                            <div class="friend-informations">
+
+                                <span class="friend-name truncate">{{ friend.name }}</span>
+                                <span [ngClass]="{'friend-status-offline': friend.status == 1, 'friend-status-queue': friend.status == 2,  'friend-status-afk': friend.status == 3}" class="friend-status truncate">
+                                    {{ friend.statusMessage }}
+                                </span>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <footer>
+
+            <img (click)="changeChatVisibility()" src="../../assets/images/aside-icons/chat.png">
+            <img src="../../assets/images/aside-icons/missions.png">
+            <img src="../../assets/images/aside-icons/voice.png">
+            <span class="client-version">V 1.0</span>
+            <img  class="bug" src="../../assets/images/aside-icons/bug.png">
+
+        </footer>
+
+    </div>
+
+</aside>
+
+<main id="main-content" class="main-content">
+
+    <router-outlet></router-outlet>
+
+</main>
+
+<app-chat [ngClass]="{'chat-open': chat}"></app-chat>

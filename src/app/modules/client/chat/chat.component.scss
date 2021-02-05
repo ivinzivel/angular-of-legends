@@ -1,0 +1,63 @@
+.chat-container {
+
+    width: 600px;
+    height: 500px;
+    background-color: #010911b4;
+    backdrop-filter: blur(12px);
+    border: 1px solid #ffffff38;
+
+    .chat-list {
+
+        height: 100%;
+        width: 200px;
+        display: inline-block;
+
+    }
+
+    .current-chat {
+
+        width: 400px;
+        height: 100%;
+        display: inline-block;
+        border-left: 1px solid #ffffff1a;
+        box-sizing: border-box;
+        position: relative;
+
+        header {
+
+            background-color: red;
+            width: 100%;
+            height: 80px;
+
+        }
+
+        main {
+
+            background-color: blue;
+            width: 100%;
+            height: 376px;
+
+        }
+
+        input {
+
+            color: white;
+            font-size: 1.4;
+            background-color: transparent;
+            width: 100%;
+            height: 44px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0 1rem;
+            border-left: 1px solid #ffffff1a;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+            box-sizing: border-box;
+
+        }
+
+    }
+
+}

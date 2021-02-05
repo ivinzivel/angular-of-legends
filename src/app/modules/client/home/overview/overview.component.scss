@@ -1,0 +1,45 @@
+.container {
+
+    h1 {
+    
+        color: #f0e6d2;
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: block;
+        margin-top: 20%;
+    
+    }
+    
+    p {
+    
+        margin-top: 2rem;
+        color: #938f83;
+        display: block;
+    
+    }
+
+    a {
+
+        color: #938f83;
+        background-color: #1e2328;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 2rem;
+        padding: .8rem 2rem;
+        display: inline-block;
+        border: 2px solid #c8aa6d;
+        transition-duration: .2s;
+
+        &:hover {
+
+            color: #f0e6d2;
+
+
+        }
+
+    }
+
+}

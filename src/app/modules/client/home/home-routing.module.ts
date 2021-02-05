@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeOverviewComponent } from './home-overview/home-overview.component';
+import { HomeComponent } from './home/home.component';
+import { OverviewComponent } from './overview/overview.component';
+import { PatchNotesComponent } from './patch-notes/patch-notes.component';
 
 const routes: Routes = [
 
-    { path: '', redirectTo: 'overview' },
-    { path: 'overview', component: HomeOverviewComponent }
+  { path: '', redirectTo: 'overview', pathMatch: 'full' },
+  { path: '', component: HomeComponent, children: [
+  
+    { path: 'overview', component: OverviewComponent },
+    { path: 'patch-notes', component: PatchNotesComponent },
+  
+  ]}
 
 ];
 
@@ -13,5 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
 export class HomeRoutingModule { }

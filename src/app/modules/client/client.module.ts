@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientMainLayoutComponent } from './client-main-layout/client-main-layout.component';
-import { ClientRoutingModule } from './cliente-routing.module';
+
+import { ClientRoutingModule } from './client-routing.module';
+import { MainClientLayoutComponent } from 'src/app/layout/main-client-layout/main-client-layout.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
   declarations: [
-    ClientMainLayoutComponent
+    MainClientLayoutComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
   ]
 })
-
-
 export class ClientModule { }
