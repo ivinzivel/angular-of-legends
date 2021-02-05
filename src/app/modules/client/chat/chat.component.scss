@@ -25,17 +25,38 @@
 
         header {
 
-            background-color: red;
-            width: 100%;
-            height: 80px;
+            width: 383px;
+            height: 42px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: .5rem;
+            border-bottom: 1px solid #8e7341;
+            backdrop-filter: blur(12px);
 
         }
 
         main {
 
-            background-color: blue;
-            width: 100%;
-            height: 376px;
+            width: 335px;
+            height: 456px;
+            overflow: auto;
+            padding: 6rem 2rem 2rem 2rem;
+
+            .message {
+
+                background-color: #8e734157;
+                color: white;
+                font-family: 'Roboto', sans-serif;
+                line-height: 26px;
+                text-rendering:optimizeLegibility;
+                width: 70%;
+                border-radius: 14px;
+                display: block;
+                padding: 1rem;
+                float: right;
+
+            }
 
         }
 
@@ -55,6 +76,76 @@
             border-left: none;
             border-right: none;
             box-sizing: border-box;
+
+        }
+
+    }
+
+}
+
+.friend-status-circle {
+
+    position: absolute;
+    transform: translate(28px, -15px);
+
+}
+
+.friend-profile-image-border {
+
+    width: 42px;
+    height: 42px;
+    background: rgb(106,80,40);
+    background: -moz-linear-gradient(0deg, rgba(106,80,40,1) 0%, rgba(190,156,87,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(106,80,40,1) 0%, rgba(190,156,87,1) 100%);
+    background: linear-gradient(0deg, rgba(106,80,40,1) 0%, rgba(190,156,87,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6a5028",endColorstr="#be9c57",GradientType=1);
+    border-radius: 300px;
+    display: inline-block;
+    margin-right: .8rem;
+
+    .friend-profile-image {
+
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        border-radius: 300px;
+        left: 10px;
+        top: 10px;
+
+    }
+
+}
+
+.friend-informations {
+
+    display: inline-block;
+    width: calc(100% - 56px);
+    height: 20px;
+    position: relative;
+    top: -14px;
+
+    .friend-name, .friend-status {
+
+        font-weight: normal;
+        display: block;
+        text-transform: initial;
+        letter-spacing: 0px;
+
+    }
+
+    .friend-name {
+
+        font-size: 18px;
+        color: #e4dbc883;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    &:hover {
+
+        .friend-name {
+
+            color: #e4dbc8 !important;
 
         }
 

@@ -20,7 +20,7 @@
     background-color: #ffffff54;
     position: absolute;
     top: 104px;
-    z-index: 3;
+    z-index: 5;
 
 }
 
@@ -33,6 +33,8 @@
     position: fixed;
 
     nav {
+
+        background-color: #010a1369;
 
         ul {
 
@@ -182,6 +184,7 @@
 
         color: #f0e6d2;
         position: relative;
+        font-family: 'Roboto', sans-serif;
 
         img { 
 
@@ -230,6 +233,7 @@
 
         .user-status { 
             
+            font-family: 'Roboto', sans-serif;
             display: block;
             margin-top: .5rem;
 
@@ -471,6 +475,7 @@
 
                     .popover-friend-informations {
 
+                        font-family: 'Roboto', sans-serif;
                         display: inline-block;
                         padding: 1rem;
                         position: relative;
@@ -489,12 +494,12 @@
 
                         .popover-friend-group-abreviation {
 
+                            font-family: 'Roboto', sans-serif;
                             display: inline-block;
                             color: #c8aa6e;
                             font-size: 14px;
                             text-transform: uppercase;
                             margin-left: 4px;
-                            transform: translateY(-2px);
 
                         }
 
@@ -502,17 +507,19 @@
 
                     .popover-friend-server-information {
 
+                        font-family: 'Roboto', sans-serif;
                         display: block;
                         color: #ffffff2e;
                         font-size: 14px;
                         letter-spacing: 1px;
-                        margin-top: 4px;
+                        margin-top: 7px;
                         
 
                     }
 
                     .popover-friend-rank {
 
+                        font-family: 'Roboto', sans-serif;
                         display: block;
                         color: #ffffff9f;
                         font-weight: bold;
@@ -524,10 +531,12 @@
 
                     .popover-status {
 
+                        font-family: 'Roboto', sans-serif;
                         border-top: 1px solid #ffffff3d;
 
                         span {
 
+                            font-family: 'Roboto', sans-serif;
                             display: block;
                             padding: 9px 24px 0 32px;
                             color: #0ac5e1;
