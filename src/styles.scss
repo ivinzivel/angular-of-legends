@@ -12,6 +12,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #785a28;
+	border-radius: 300px;
+}
+
 *:focus {
 
 	outline: 0 !important;

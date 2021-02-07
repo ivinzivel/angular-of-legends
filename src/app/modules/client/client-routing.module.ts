@@ -7,9 +7,11 @@ const routes: Routes = [
   { path: '', component: MainClientLayoutComponent, children: [
     
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) }
+    { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+    { path: 'play', loadChildren: () => import('./play/play.module').then(m => m.PlayModule) }
 
-  ]}
+  ]},
+  { path: 'game', loadChildren: () => import('./game/game.module').then(m => m.GameModule) }
 
 ];
 

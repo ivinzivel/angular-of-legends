@@ -1,0 +1,23 @@
+<nav class="component-menu">
+
+    <ul>
+
+        <li><a routerLinkActive="item-menu-active" routerLink="pvp">pvp</a></li>
+        <li><a routerLinkActive="item-menu-active" routerLink="patch-notes">co-op vs. ai</a></li>
+        <li><a routerLinkActive="item-menu-active" routerLink="patch-notes">training</a></li>
+
+    </ul>
+
+</nav>
+
+<div class="confirm-button">
+    <img routerLink="/client/home" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
+    <span routerLink="/client/play/lobby" class="title">
+        <span>Confirm</span>
+        <img class="confirm" src="./assets/images/confirm-button/confirm-button-click-area.png">
+    </span>
+</div>
+
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

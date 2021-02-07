@@ -6,9 +6,9 @@ import { Observable, Subject } from 'rxjs';
 })
 export class BackgroundService {
 
-  private background = new Subject<string>();
+  private background = new Subject<object>()
 
-  changeBackground(url: string) {
+  changeBackground(url) {
 
     this.background.next(url)
   

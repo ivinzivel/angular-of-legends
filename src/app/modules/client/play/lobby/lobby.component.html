@@ -1,0 +1,100 @@
+<header>
+    
+</header>
+
+<div class="banners">
+
+    <div id="firstBanner" class="banner delay3">
+        <button [ngClass]="{'invite-friend-hidden': inQueue}" class="invite-friend">+</button>
+    </div>
+    <div id="secondBanner" class="banner delay2">
+        <button [ngClass]="{'invite-friend-hidden': inQueue}" class="invite-friend">+</button>
+    </div>
+    <div id='playerBanner' class="banner">
+        <div class="player-informations">
+            <span class="owner-room-player">Ivinzivel</span>
+            <img class="rank-image" src="./assets/images/aside-icons/platina.png">
+            <span class="rank-tier">II</span>
+            <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4791.jpg?image=q_auto:best&v=1518361200">
+            <div [ngClass]="{'role-select-button-desabled': inQueue}" (click)="openRoleSelect()" class="role-select-button">
+                <div *ngIf="roleSelected == null">
+                    <div class="arrow-up"></div>
+                    <div class="arrow-right"></div>
+                    <div class="arrow-down"></div>
+                    <div class="arrow-left"></div>
+                    <div class="box"></div>
+                </div>
+                <img *ngIf="roleSelected == 'mid'" src="./assets/images/lobby/roles/mid-selected.png">
+                <img *ngIf="roleSelected == 'adc'" src="./assets/images/lobby/roles/adc-selected.png">
+                <img *ngIf="roleSelected == 'jg'" src="./assets/images/lobby/roles/jg-selected.png">
+                <img *ngIf="roleSelected == 'sup'" src="./assets/images/lobby/roles/sup-selected.png">
+                <img *ngIf="roleSelected == 'top'" src="./assets/images/lobby/roles/top-selected.png">
+                <img *ngIf="roleSelected == 'fill'" src="./assets/images/lobby/roles/fill-selected.png">
+            </div>
+        </div>
+        <img src="./assets/images/lobby/banner.png">
+    </div>
+    <div id="fourthBanner" class="banner delay2">
+        <button [ngClass]="{'invite-friend-hidden': inQueue}" class="invite-friend">+</button>
+    </div>
+    <div id="fifthBanner" class="banner delay3">
+        <button [ngClass]="{'invite-friend-hidden': inQueue}" class="invite-friend">+</button>
+    </div>
+
+</div>
+
+
+<div id="roleSelect" class="role-select">
+    <span class="mid">
+        <span class="role-name">Middle</span>
+        <img (click)="selectRole('mid')" src="./assets/images/lobby/roles/mid.png">
+    </span>
+    <span class="adc">
+        <img (click)="selectRole('adc')" src="./assets/images/lobby/roles/adc.png">
+        <span class="role-name">Bottom</span>
+    </span>
+    <span class="jg">
+        <span class="role-name">Jungle</span>
+        <img (click)="selectRole('jg')" src="./assets/images/lobby/roles/jg.png">
+    </span>
+    <span class="sup">
+        <img (click)="selectRole('sup')" src="./assets/images/lobby/roles/sup.png">
+        <span class="role-name">Support</span>
+    </span>
+    <span class="top">
+        <span class="role-name">Top</span>
+        <img (click)="selectRole('top')" src="./assets/images/lobby/roles/top.png">
+    </span>
+    <span class="fill">
+        <img (click)="selectRole('fill')" src="./assets/images/lobby/roles/fill.png">
+        <span class="role-name">Fill</span>
+    </span>
+    <div class="role-select-button">
+        <div *ngIf="roleSelected == null">
+            <div class="arrow-up"></div>
+            <div class="arrow-right"></div>
+            <div class="arrow-down"></div>
+            <div class="arrow-left"></div>
+            <div class="box"></div>
+        </div>
+        <img *ngIf="roleSelected == 'mid'" src="./assets/images/lobby/roles/mid-selected.png">
+        <img *ngIf="roleSelected == 'adc'" src="./assets/images/lobby/roles/adc-selected.png">
+        <img *ngIf="roleSelected == 'jg'" src="./assets/images/lobby/roles/jg-selected.png">
+        <img *ngIf="roleSelected == 'sup'" src="./assets/images/lobby/roles/sup-selected.png">
+        <img *ngIf="roleSelected == 'top'" src="./assets/images/lobby/roles/top-selected.png">
+        <img *ngIf="roleSelected == 'fill'" src="./assets/images/lobby/roles/fill-selected.png">
+    </div>
+</div>
+
+<div class="confirm-button">
+    <img *ngIf="inQueue" (click)="cancelQueue()" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
+    <span *ngIf="inQueue" class="title title-desabled">
+        <span>Find match</span>
+        <img class="confirm" src="./assets/images/confirm-button/confirm-button-click-area.png">
+    </span>
+    <img *ngIf="!inQueue" (click)="closeLobby()" routerLink="/client/home" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
+    <span *ngIf="!inQueue" [ngClass]="{'title-desabled': roleSelected == null}" (click)="enterQueue()" class="title">
+        <span>Find match</span>
+        <img class="confirm" src="./assets/images/confirm-button/confirm-button-click-area.png">
+    </span>
+</div>

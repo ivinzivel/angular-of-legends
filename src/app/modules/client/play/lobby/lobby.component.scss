@@ -1,0 +1,470 @@
+@import '/src/assets/scss/animations.scss';
+
+.role-select-button-desabled {
+
+    cursor: default;
+    border-color: #5c5b57 !important;
+    filter: grayscale(100%);
+
+    img {
+
+        filter: grayscale(100%);
+
+    }
+
+    &:hover {
+
+        transform: rotate(45deg) scale(.9) !important;
+
+    }
+
+}
+
+
+.role-select-button {
+
+    width: 80px;
+    height: 80px;
+    background-color: #1e2328;
+    border: 5px solid #0596aa;
+    box-sizing: border-box;
+    margin: 295px auto 0 auto;
+    position: relative;
+    transform: rotate(45deg) scale(.9);
+    transition-duration: .2s;
+    cursor: pointer;
+
+    img {
+
+        padding: 20px;
+        transform: rotate(-45deg);
+
+    }
+
+    .arrow-up {
+
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid  #0596aa;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 16px;
+        right: 13px;
+    }
+
+    .arrow-right {
+
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid  #0596aa;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 15.5px;
+        left: 13px;
+    }
+
+    .arrow-down {
+
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid  #0596aa;
+        transform: rotate(135deg);
+        position: absolute;
+        bottom: 15.5px;
+        right: 13px;
+    }
+
+    .arrow-left {
+
+        width: 0; 
+        height: 0; 
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent; 
+        border-right: 5px solid #0596aa;
+        transform: rotate(315deg);
+        position: absolute;
+        bottom: 13px;
+        left: 15.5px;
+    }
+
+    .box {
+
+        width: 10px;
+        height: 10px;
+        background-color: #0596aa;
+        position: absolute;
+        top: calc( 50% - 5px );
+        left: calc( 50% - 5px );
+
+    }
+
+    &:hover {
+
+        transform: rotate(45deg) scale(1);
+
+    }
+
+}
+
+
+.role-select {
+
+    width: 700px;
+    height: 700px;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.897) 10%, rgba(255,255,255,0) 60%);
+    position: absolute;    
+    top: 217px;
+    left: calc(50% - 354px);
+    z-index: 5;
+    justify-content: center;
+    align-content: center;
+    display: none;
+
+    img {
+
+        cursor: pointer;
+        transition-duration: .2s;
+
+        &:hover {
+
+            transform: scale(1.1);
+            filter: brightness(150%);
+
+        }
+
+    }
+
+    .role-name {
+
+        color: #f0e6d2;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+    }
+
+    .mid {
+
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 190px;
+        left: 254px;
+        text-align: center;
+
+        span {
+
+            padding-bottom: 1rem;
+            display: block;
+
+        }
+
+    }
+
+    .adc {
+
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 266px;
+        right: 92px;
+        text-align: center;
+
+        span {
+
+            padding-left: 1rem;
+
+        }
+
+    }
+
+    .jg {
+
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 266px;
+        left: 114px;
+        text-align: center;
+
+        span {
+
+            padding-right: 1rem;
+
+        }
+
+    }
+
+    .sup {
+
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 340px;
+        right: 62px;
+        text-align: center;
+
+        span {
+
+            padding-left: 1rem;
+
+        }
+
+    }
+
+    .top {
+
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 340px;
+        left: 113px;                
+        text-align: center;
+
+        span {
+
+            padding-right: 1rem;
+
+        }
+
+    }
+
+    .fill {
+
+        width: 200px;
+        height: 200px;
+        padding: 2rem;
+        bottom: 36px;
+        left: 224px;
+        text-align: center;
+        position: absolute;
+
+        span {
+
+            display: block;
+            padding-top: 1rem;
+
+        }
+
+    }
+
+    .role-select-button {
+
+        border-radius: 50%;
+        margin-top: 296px;
+        position: relative;
+        top: 20px;
+        left: 4px;
+
+        img {
+
+            padding: 20px;
+            transform: rotate(-45deg);
+
+        }
+
+    }
+
+}
+
+.banners {
+
+    display: flex;
+
+    .banner {
+
+        width: 20%;
+        position: relative;
+        text-align: center;
+        opacity: 0;
+        animation: SlideDown;
+        animation-duration: 1s;
+
+        .invite-friend {
+
+            color: #e4dbc8;
+            width: 100px;
+            height: 100px;
+            margin: 360px auto 0 auto;
+            font-size: 2rem;
+            border-radius: 50%;
+            border: 2px solid #aa9261;
+            background-color: rgb(51, 51, 51);
+            opacity: .4;
+            transition-duration: .2s;
+            cursor: pointer;
+
+            &:hover {
+
+                opacity: .8;
+                transform: scale(1.1);
+                box-shadow: 0 0 20px #aa9261;
+
+            }
+
+        }
+
+        .invite-friend-hidden {
+
+            margin: 300px auto 0 auto;
+            opacity: 0;
+
+        }
+
+        .player-informations {
+
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            padding-top: 200px;
+
+            .owner-room-player {
+
+                color: #f0e6d2;
+                font-size: 1.8rem;
+                font-weight: bold;
+                letter-spacing: 2px;
+                display: block;
+
+            }
+
+            .rank-image {
+
+                width: 200px;
+                padding-top: 2rem;
+                position: relative;
+                z-index: 2;
+
+            }
+
+            .rank-tier {
+
+                color: white;
+                z-index: 2;
+                display: block;
+                position: relative;
+                top: -68px;
+
+
+            }
+
+            .profile-image {
+
+                width: 126px;
+                display: block;
+                z-index: 1;
+                border-radius: 50%;
+                margin: -201px auto;
+
+            }
+
+        }
+
+    }
+
+}
+
+.confirm-button {
+
+    background-image: url('/assets/images/confirm-button/confirm-button-shape.png');
+    width: 257px;
+    height: 54px;
+    position: fixed;
+    bottom: 1rem;
+    z-index: 4;
+    left: 50%;
+    margin-left: -257px;
+
+    span, img {
+
+        position: absolute;
+
+    }
+
+    .cancel {
+
+        z-index: 1;
+        left: 6px;
+        
+    }
+
+    .cancel, .confirm {
+
+        transition-duration: .2s;
+        cursor: pointer;
+
+        &:hover {
+
+            filter: brightness(150%);
+
+        }
+
+    }
+
+    .title {
+
+        width: 257px;
+        height: 54px;
+
+        span {
+
+            text-transform: uppercase;
+            color: #f0e6d2;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 2;
+            right: 60px;
+            top: 20px;
+            cursor: pointer;
+
+        }
+
+        .confirm {
+    
+            right: 0;
+            z-index: 1;
+    
+        }
+
+        &:hover {
+
+            .confirm {
+
+                filter: brightness(150%);
+
+            }
+
+        }
+
+    }
+
+    .title-desabled {
+
+        span, .confirm {
+
+            filter: grayscale(100%);
+            cursor: default;
+
+        }
+
+        &:hover {
+
+            .confirm {
+
+                filter: grayscale(100%) brightness(100%);
+
+            }
+
+        }
+
+    }
+
+}

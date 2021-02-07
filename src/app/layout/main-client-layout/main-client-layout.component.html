@@ -1,3 +1,29 @@
+<div id="backgroundClient"></div>
+
+<div id="matchFound" [ngClass]="{'match-accepted': matchAccepted}" class="match-found">
+    
+    <div class="external-circle">
+        <div class="internal-circle">
+            <div class="progress-circle">
+                <div class="match-informations">
+                    <img src="./assets/images/play-icons/sr-enabled.png">
+                    <span *ngIf="!matchAccepted && !matchDeclined" class="match-announcement">Match found</span>
+                    <span *ngIf="!matchAccepted && !matchDeclined" class="match-description">Summoner's Rift - Featured - 5v5</span>
+                    <span *ngIf="matchAccepted" class="match-announcement">Match accepted</span>
+                    <span *ngIf="matchAccepted" class="match-description">Waiting other players</span>
+                </div>
+            </div>
+            <span id="progressBar" class="bar"></span>
+        </div>
+        <span (click)="acceptMatch()" class="accept-button">
+            <span>Accept!</span>
+            <img src="./assets/images/match-found/accept-button.png">
+        </span>
+        <button (click)="cancelMatch()" class="decline-button">Decline</button>
+    </div>
+
+</div>
+
 <span class="main-layout-horizontal-line"></span>
 
 <header class="main-header">
@@ -9,7 +35,7 @@
             <li> 
                 
                 <img class="play-button-shape" src="../../assets/images/play-button/play-button-shape.png">
-                <img class="play-button-click-area" src="../../assets/images/play-button/play-button-click-area.png">
+                <img routerLink="play" class="play-button-click-area" src="../../assets/images/play-button/play-button-click-area.png">
                 <span class="play-button-text">Play</span>
             
             </li>
@@ -73,7 +99,47 @@
 
     </div>
 
-    <div class="menu-aside">
+    <div id="playInformations" class="play-informations">
+
+        <div id="lobbyPreview" class="lobby">
+
+            <header>
+                <img class="friend-icon" src="./assets/images/lobby/friend-icon.png">
+                <span class="party-status">Closed party</span>
+            </header>
+
+            <img class="mini-sr" src="./assets/images/lobby/mini-sr.png">
+
+            <div class="players">
+                <img src="./assets/images/lobby/single-friend-icon.png">
+                <img src="./assets/images/lobby/single-friend-icon.png">
+                <img src="./assets/images/lobby/single-friend-icon.png">
+                <img src="./assets/images/lobby/single-friend-icon.png">
+                <img src="./assets/images/lobby/single-friend-icon.png">
+            </div>
+
+            <span class="queue-type">Ranked Solo/Duo</span>
+
+        </div>
+
+        <div id="queuePreview" class="queue">
+
+            <header>
+                <span (click)="cancelQueue()" class="close">x</span>
+                <span class="queue-message">Finding match</span>
+            </header>
+
+            <img class="mini-sr" src="./assets/images/lobby/mini-sr.png">
+
+            <div class="time">{{queueTimeMinutes}}:{{queueTimeSeconds}}</div>
+
+            <span class="queue-type">Estimated 1:20</span>
+
+        </div>
+
+    </div>
+
+    <div id="menuAside" class="menu-aside">
 
         <span>Social</span>
         <div class="menu-aside-icons-wrapper">
@@ -87,9 +153,9 @@
     
     </div>
 
-    <div class="frined-list">
+    <div class="friend-list">
 
-        <div (scroll)="ajustPopoversPosition()" id="scrollable-area" class="scrollable-area">
+        <div (scroll)="ajustPopoversPosition()" id="scrollableArea" class="scrollable-area">
 
             <div class="group-area">
 

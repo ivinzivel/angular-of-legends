@@ -55,6 +55,15 @@
                 display: block;
                 padding: 1rem;
                 float: right;
+                transition-duration: .2s;
+
+                &:hover {
+
+                    background-color: #8e7341a4;
+                    box-shadow: 0 0 20px #8e7341a4;
+                    transform: scale(1.02);
+
+                }
 
             }
 
@@ -136,18 +145,8 @@
     .friend-name {
 
         font-size: 18px;
-        color: #e4dbc883;
+        color: #e4dbc8;
         font-family: 'Roboto', sans-serif;
-
-    }
-
-    &:hover {
-
-        .friend-name {
-
-            color: #e4dbc8 !important;
-
-        }
 
     }
 

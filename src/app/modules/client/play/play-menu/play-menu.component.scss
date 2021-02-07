@@ -1,0 +1,76 @@
+@import './../../../../../assets/scss/menu-component.scss';
+
+.confirm-button {
+
+    background-image: url('/assets/images/confirm-button/confirm-button-shape.png');
+    width: 257px;
+    height: 54px;
+    position: fixed;
+    bottom: 1rem;
+    z-index: 4;
+    left: 50%;
+    margin-left: -257px;
+
+    span, img {
+
+        position: absolute;
+        cursor: pointer;
+
+    }
+
+    .cancel {
+
+        z-index: 1;
+        left: 6px;
+        
+    }
+
+    .cancel, .confirm {
+
+        transition-duration: .2s;
+
+        &:hover {
+
+            filter: brightness(150%);
+
+        }
+
+    }
+
+    .title {
+
+        width: 257px;
+        height: 54px;
+
+        span {
+
+            text-transform: uppercase;
+            color: #f0e6d2;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 2;
+            right: 30%;
+            top: 20px;
+
+        }
+
+        .confirm {
+    
+            right: 0;
+            z-index: 1;
+    
+        }
+
+        &:hover {
+
+            .confirm {
+
+                filter: brightness(150%);
+
+            }
+
+        }
+
+    }
+
+}

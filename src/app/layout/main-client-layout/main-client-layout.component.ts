@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BackgroundService } from 'src/app/modules/client/background.service';
+import { PlayService } from 'src/app/modules/client/play.service';
 
 @Component({
   selector: 'app-main-client-layout',
@@ -29,14 +31,75 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
     { id: 15, name: 'Kami', status: 1, statusMessage: 'Offline', profilePicture: 'https://opgg-static.akamaized.net/images/profile_icons/profileIcon1635.jpg?image=q_auto:best&v=1518361200', profileBackground: 'https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/Katarina_DeathSwornSkin-f0d9492b7a83186ecc95b4ce3547d833.jpg', rank: 'Platinum', rankTier: 'I' }
   ]
   amigosTotal: number = this.friends.length
+  inQueue: boolean = false
+  queueTimeMinutes: number = 0
+  queueTimeSeconds: any = 0
+  matchAccepted: boolean = false
+  matchDeclined: boolean = false
 
-  constructor(private backgroundService: BackgroundService) {
+  constructor(private backgroundService: BackgroundService,
+              private playService: PlayService,
+              private router: Router) {
 
     this.backgroundService.getBackgroundObservable().subscribe(
 
       response => {
 
-        document.getElementById('main-content').style.backgroundImage = `url('${response}')`
+        document.getElementById('backgroundClient').style.backgroundImage = `url('${response.backgroundUrl}')`
+        document.getElementById('backgroundClient').style.backgroundSize = response.backgroundSize
+        document.getElementById('backgroundClient').style.backgroundPosition = response.backgroundPosition
+
+      }
+
+    )
+
+    this.playService.getLobbyObservable().subscribe(
+
+      response => {
+
+        if(response == true) {
+
+          document.getElementById('scrollableArea').style.height = 'calc(100vh - 314px)'
+          document.getElementById('menuAside').style.marginTop = '115px'
+          document.getElementById('playInformations').style.right = '0'
+
+        } else {
+
+          document.getElementById('playInformations').style.right = '-280px'
+          setTimeout( () => {
+
+            document.getElementById('scrollableArea').style.height = 'calc(100vh - 200px)'
+            document.getElementById('menuAside').style.marginTop = '0'
+
+          }, 100)
+
+        }
+
+      }
+
+    )
+
+    this.playService.getQueueObservable().subscribe(
+
+      response => {
+
+        if(response == true) {
+
+          document.getElementById('lobbyPreview').style.transform = 'translateX(-280px)'
+          document.getElementById('queuePreview').style.right = '0'
+          this.inQueue = true
+          setTimeout( () => { this.queueTime() }, 1000 )
+
+        } else {
+
+          document.getElementById('lobbyPreview').style.transform = 'translateX(0)'
+          document.getElementById('queuePreview').style.right = '-280px'
+          document.getElementById('matchFound').classList.remove('match-found-visible')
+          this.inQueue = false
+          this.queueTimeMinutes = 0
+          this.queueTimeSeconds = 0
+
+        }
 
       }
 
@@ -96,7 +159,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
   showPopover(id) {
 
-    document.getElementById(`popover${id}`).style.opacity = '1'
+    document.getElementById(`popover${id}`).style.display = 'block'
 
   }
 
@@ -104,7 +167,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
   hidePopover(id) {
 
-    document.getElementById(`popover${id}`).style.opacity = '0'
+    document.getElementById(`popover${id}`).style.display = 'none'
 
   }
 
@@ -113,6 +176,90 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
   changeChatVisibility() {
 
     this.chat = !this.chat
+
+  }
+
+
+
+  queueTime() {
+
+    if(this.queueTimeSeconds < 60) {
+
+      this.queueTimeSeconds = this.queueTimeSeconds + 1
+      
+    } else {
+
+      this.queueTimeMinutes = this.queueTimeMinutes + 1
+      this.queueTimeSeconds = 0
+
+    }
+
+    if(this.queueTimeSeconds == 10) {
+
+      document.getElementById('matchFound').classList.add('match-found-visible')
+      document.getElementById('progressBar').style.animationName = 'ProgressBar'
+      this.inQueue = false
+      console.log('matchAccepted: '+this.matchAccepted+', matchDeclined: '+this.matchDeclined)
+
+      setTimeout( () => { 
+
+        if(this.matchAccepted == false && this.inQueue == false) {
+
+          this.playService.changeQueueState(false)
+          document.getElementById('matchFound').classList.remove('match-found-visible')
+          document.getElementById('progressBar').style.animationName = ''
+
+        }
+
+       }, 14000)
+
+    }
+
+    if(this.inQueue == true) {
+
+      setTimeout( () => { this.queueTime() }, 1000 )
+
+    }
+    
+
+  }
+
+
+
+  cancelQueue() {
+
+    this.playService.changeQueueState(false)
+
+  }
+
+
+
+  acceptMatch() {
+    
+    this.matchAccepted = true
+    this.matchDeclined = false
+    document.getElementById('progressBar').style.animationName = ''
+    setTimeout( () => {
+      this.router.navigateByUrl('/client/game/champion-select')
+    }, 2000 )
+
+  }
+
+
+
+  cancelMatch() {
+
+    if(this.matchAccepted == false) {
+
+      this.matchAccepted = false
+      this.matchDeclined = true
+      this.playService.changeQueueState(false)
+      document.getElementById('progressBar').style.animationName = ''
+      setTimeout( () => { this.matchDeclined = false }, 1000 )
+      this.playService.changeQueueState(false)
+      alert('passou pelo cancel function')
+
+    }
 
   }
 
