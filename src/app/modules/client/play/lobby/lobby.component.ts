@@ -111,6 +111,18 @@ export class LobbyComponent implements OnInit {
 
 
 
+  closeRoleSelect() {
+
+    if(this.inQueue == false) {
+
+      document.getElementById('roleSelect').style.display = 'none'
+
+    }
+
+  }
+
+
+
   selectRole(role) {
 
       this.roleSelected = role

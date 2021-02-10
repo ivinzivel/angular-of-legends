@@ -18,6 +18,33 @@
 
     opacity: 1 !important;
     z-index: 6 !important;
+    transform: scale(1) !important;
+
+    .progress-circle {
+
+        animation: Shine 2s infinite;
+
+        @keyframes Shine {
+        
+            0% {
+    
+                filter: brightness(100%);
+    
+            }
+            50% {
+    
+                filter: brightness(120%);
+    
+            }
+            100% {
+    
+                filter: brightness(100%);
+    
+            }
+    
+        }
+
+    }
 
 }
 
@@ -26,6 +53,20 @@
     .bar {
 
         transform: translateY(-680px) scale(1.2);
+
+    }
+
+    .external-circle {
+
+        animation-name: AcceptAnimation;
+        animation-duration: .5s;
+
+    }
+
+    .progress-circle {
+
+        filter: brightness(200%);
+        animation-name: None !important;
 
     }
 
@@ -52,6 +93,26 @@
 
     }
 
+    @keyframes AcceptAnimation {
+        
+        0% {
+
+            transform: scale(1)
+
+        }
+        50% {
+
+            transform: scale(1.2)
+
+        }
+        100% {
+
+            transform: scale(1)
+
+        }
+
+    }
+
 }
 
 .match-found {
@@ -68,6 +129,7 @@
     justify-content: center;
     display: flex;
     transition-duration: .2s;
+    transform: scale(3) rotate(-30deg);
     z-index: -1;
     opacity: 0;
 
@@ -78,6 +140,7 @@
         background-color: transparent;
         border: 3px solid #71582a;
         border-radius: 50%;
+        position: relative;
 
         .internal-circle {
     
@@ -179,7 +242,7 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            top: 750px;
+            top: 650px;
             left: calc(50% - 138px);
             z-index: 6;
             transition-duration: .2s;
@@ -232,7 +295,7 @@
             border: 2px solid #c8aa6d;
             background-color: #1e2328;
             position: absolute;
-            top: 850px;
+            top: 750px;
             left: calc(50% - 93.5px);
             z-index: 6;
             cursor: pointer;

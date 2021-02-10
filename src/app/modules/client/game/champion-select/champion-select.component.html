@@ -1,2 +1,336 @@
-<p>champion-select works!</p>
-<button (click)="teste()">voltar</button>
+<div class="background"></div>
+
+<video class="video-background" autoplay muted>
+    <source src="./assets/images/champion-select/mid.mp4" type="video/mp4">
+</video>
+
+<div id="assigned" class="assigned-container">
+    <span class="assigned">You were assigned</span>
+    <span class="role">Middle</span>
+</div>
+
+<div id="overlayBackground" class="overlay-background"></div>
+
+<aside class="ally-team">
+
+    <ul class="ally-bans">
+        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
+        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
+        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
+        <li>
+            <img *ngIf="currentChampionBanSelected == null" src="./assets/images/champion-select/ban-icon.png">
+            <img *ngIf="currentChampionBanSelected !== null" src="{{ currentChampionBanSelected.picture }}">
+        </li>
+        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
+    </ul>
+
+    <ul class="ally-team-champs">
+
+        <li id="player1" class="ally-team-champs-intro-animation">
+            <div class="spells">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+            </div>
+            <img id="champPreview1" class="champion-preview delay1" src="./assets/images/champion-select/roles/adc.png">
+            <div id="playerInfo1" class="informations delay1">
+                <!-- <span class="picking">Picking...</span> -->
+                <span class="champion-name">Zed</span>
+                <span class="role">Bottom</span>
+                <span class="user-name">Ivinzivel</span>
+            </div>
+        </li>
+        <li id="player2" class="ally-team-champs-intro-animation">
+            <div class="spells">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+            </div>
+            <img id="champPreview2" class="champion-preview delay2" src="./assets/images/champion-select/roles/jg.png">
+            <div id="playerInfo2" class="informations delay2">
+                <!-- <span class="picking">Picking...</span> -->
+                <span class="champion-name">Zed</span>
+                <span class="role">Jungle</span>
+                <span class="user-name">Ivinzivel</span>
+            </div>
+        </li>
+        <li id="player3" class="ally-team-champs-intro-animation">
+            <div class="spells">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+            </div>
+            <img id="champPreview3" class="champion-preview delay3" src="./assets/images/champion-select/roles/top.png">
+            <div id="playerInfo3" class="informations delay3">
+                <!-- <span class="picking">Picking...</span> -->
+                <span class="champion-name">Zed</span>
+                <span class="role">Top</span>
+                <span class="user-name">Ivinzivel</span>
+            </div>
+        </li>
+        <li id="player4" class="ally-team-champs-intro-animation">
+            <div class="spells">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+            </div>
+            <img *ngIf="currentChampionSelected == null"  id="champPreview4" class="champion-preview delay4" src="./assets/images/champion-select/roles/mid.png">
+            <img *ngIf="currentChampionSelected !== null" class="champion-preview" src="{{ currentChampionSelected.picture }}">
+            <div id="playerInfo4" class="informations delay4">
+                <!-- <span class="picking">Picking...</span> -->
+                <span *ngIf="currentChampionSelected !== null" class="champion-name">{{ currentChampionSelected.name }}</span>
+                <span class="role">Middle</span>
+                <span class="user-name">Ivinzivel</span>
+            </div>
+        </li>
+        <li id="player5" class="ally-team-champs-intro-animation delay4">
+            <div class="spells">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+                <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+            </div>
+            <img id="champPreview5" class="champion-preview delay5" src="./assets/images/champion-select/roles/sup.png">
+            <div id="playerInfo5" class="informations delay5">
+                <!-- <span class="picking">Picking...</span> -->
+                <span class="champion-name">Zed</span>
+                <span class="role">Support</span>
+                <span class="user-name">Ivinzivel</span>
+            </div>
+        </li>
+
+    </ul>
+
+</aside>
+
+<main id="mainContent">
+
+    <span *ngIf="pickPeriod" class="announcement">Choose your champion!</span>
+    <span *ngIf="declarePeriod" class="announcement">Declare your champion!</span>
+    <span *ngIf="banPeriod" class="announcement">Ban a champion!</span>
+    <span *ngIf="!banReviewPeriod" class="announcement-timer">{{ timerNumber }}</span>
+
+    <div id="allyBarWrapper" class="ally-progress-bar">
+        <span id="allyBar" class="bar"></span>
+    </div>
+    <div id="enemyBarWrapper" class="enemy-progress-bar">
+        <span id="enemyBar" class="bar"></span>
+    </div>
+
+    <ul class="filters">
+        <li class="lane">
+            <img src="./assets/images/lobby/roles/top.png">
+        </li>
+        <li class="lane">
+            <img src="./assets/images/lobby/roles/jg.png">
+        </li>
+        <li class="lane">
+            <img src="./assets/images/lobby/roles/mid.png">
+        </li>
+        <li class="lane">
+            <img src="./assets/images/lobby/roles/adc.png">
+        </li>
+        <li class="lane sup">
+            <img src="./assets/images/lobby/roles/sup.png">
+        </li>
+    </ul>
+
+    <div *ngIf="banReviewPeriod" id="bans" class="bans">
+
+        <div class="ally-bans">
+
+            <span class="announcement">Your team's bans</span>
+
+            <ul>
+                
+                <li class="ban">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>None</span>
+                </li>
+                <li class="ban">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>None</span>
+                </li>
+                <li class="ban">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>None</span>
+                </li>
+                <li class="ban">
+                    <img src="{{ currentChampionBanSelected.picture }}">
+                    <span>{{ currentChampionBanSelected.name }}</span>
+                </li>
+                <li class="ban">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>None</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <span class="announcement bans-announcement">Bans locked in</span>
+
+        <div class="enemy-bans">
+
+            <ul>
+                
+                <li class="ban">
+                    <img src="{{ enemyBans[0].picture }}">
+                    <img *ngIf="enemyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ enemyBans[0].name }}</span>
+                </li>
+                <li class="ban">
+                    <img src="{{ enemyBans[1].picture }}">
+                    <img *ngIf="enemyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ enemyBans[1].name }}</span>
+                </li>
+                <li class="ban">
+                    <img src="{{ enemyBans[2].picture }}">
+                    <img *ngIf="enemyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ enemyBans[2].name }}</span>
+                </li>
+                <li class="ban">
+                    <img src="{{ enemyBans[3].picture }}">
+                    <img *ngIf="enemyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ enemyBans[3].name }}</span>
+                </li>
+                <li class="ban">
+                    <img src="{{ enemyBans[4].picture }}">
+                    <img *ngIf="enemyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ enemyBans[4].name }}</span>
+                </li>
+
+            </ul>
+
+            <span class="announcement">Enemy team's bans</span>
+
+        </div>
+
+    </div>
+
+    <ul id="chamiponList" class="champion-list">
+        <li *ngFor="let champion of champions; let championIndex = index" [ngClass]="{'champion-desable': champion.selectable == false}" (click)="selectChampion(champion, championIndex)" class="champion">
+            <img src="{{ champion.picture }}" class="champion-picture">
+            <span class="champion-name">{{ champion.name }}</span>
+            <span *ngIf="currentChampionSelected == champion" class="champion-select-frame">
+                <span class="circle"></span>
+            </span>
+            <span *ngIf="currentChampionBanSelected == champion" class="champion-ban-frame">
+                <span class="circle">
+                    <span class="line"></span>
+                </span>
+            </span>
+        </li>
+    </ul>
+
+    <div class="lined-circle-wrapper">
+        <img class="lined-circle" src="./assets/images/champion-select/lined-circle.png">
+    </div>
+
+    <img class="button-detail button-detail-left" src="./assets/images/champion-select/accept-button-detail.png">
+    <img class="button-detail button-detail-right" src="./assets/images/champion-select/accept-button-detail.png">
+    
+    <span *ngIf="pickPeriod" (click)="pickChampion()" class="accept-button">
+        <span>Lock in</span>
+        <img src="./assets/images/champion-select/accept-button.png">
+    </span>
+    
+    <span *ngIf="banPeriod" (click)="banChampion()" class="accept-button">
+        <span>Ban</span>
+        <img src="./assets/images/champion-select/ban-button.png">
+    </span>
+
+    <footer>
+
+        <button class="edit-rune">
+            <img src="./assets/images/champion-select/rune-edit.png">
+        </button>
+
+        <select>
+            <option value="">First rune</option>
+        </select>
+
+        <div class="summoners-spells">
+            <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+            <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+        </div>
+
+    </footer>
+
+</main>
+
+<aside class="enemy-team">
+
+    <ul class="enemy-bans">
+        <li>
+            <img *ngIf="banReviewPeriod || pickPeriod" class="champion-picture" src="{{ enemyBans[0].picture }}">
+            <img src="./assets/images/champion-select/ban-icon.png">
+        </li>
+        <li>
+            <img *ngIf="banReviewPeriod || pickPeriod" class="champion-picture" src="{{ enemyBans[1].picture }}">
+            <img src="./assets/images/champion-select/ban-icon.png">
+        </li>
+        <li>
+            <img *ngIf="banReviewPeriod || pickPeriod" class="champion-picture" src="{{ enemyBans[2].picture }}">
+            <img src="./assets/images/champion-select/ban-icon.png">
+        </li>
+        <li>
+            <img *ngIf="banReviewPeriod || pickPeriod" class="champion-picture" src="{{ enemyBans[3].picture }}">
+            <img src="./assets/images/champion-select/ban-icon.png">
+        </li>
+        <li>
+            <img *ngIf="banReviewPeriod || pickPeriod" class="champion-picture" src="{{ enemyBans[4].picture }}">
+            <img src="./assets/images/champion-select/ban-icon.png">
+        </li>
+    </ul>
+
+    <ul id="enemyTeamChamps" class="enemy-team-champs">
+
+        <li>
+            <div class="informations">
+                <!-- <span class="picking">Picking...</span> -->
+                <span *ngIf="pickPeriod" class="role">{{ champions[24].name }}</span>
+                <span class="user-name">Summoner 1</span>
+            </div>
+            <div class="champion-preview">
+                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[24].picture }}">
+            </div>
+        </li>
+        <li>
+            <div class="informations">
+                <!-- <span class="picking">Picking...</span> -->
+                <span *ngIf="pickPeriod" class="role">{{ champions[72].name }}</span>
+                <span class="user-name">Summoner 2</span>
+            </div>
+            <div class="champion-preview">
+                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[72].picture }}">
+            </div>
+        </li>
+        <li>
+            <div class="informations">
+                <!-- <span class="picking">Picking...</span> -->
+                <span *ngIf="pickPeriod" class="role">{{ champions[120].name }}</span>
+                <span class="user-name">Summoner 3</span>
+            </div>
+            <div class="champion-preview">
+                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[120].picture }}">
+            </div>
+        </li>
+        <li>
+            <div class="informations">
+                <!-- <span class="picking">Picking...</span> -->
+                <span *ngIf="pickPeriod" class="role">{{ champions[5].name }}</span>
+                <span class="user-name">Summoner 4</span>
+            </div>
+            <div class="champion-preview">
+                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[5].picture }}">
+            </div>
+        </li>
+        <li>
+            <div class="informations">
+                <!-- <span class="picking">Picking...</span> -->
+                <span *ngIf="pickPeriod" class="role">{{ champions[129].name }}</span>
+                <span class="user-name">Summoner 5</span>
+            </div>
+            <div class="champion-preview">
+                <img *ngIf="pickPeriod" width="100%" src="{{ champions[129].picture }}">
+            </div>
+        </li>
+
+    </ul>
+
+</aside>

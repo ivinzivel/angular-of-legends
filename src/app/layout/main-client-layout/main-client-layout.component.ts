@@ -116,8 +116,6 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    // this.ajustPopoversPosition()
-
   }
 
 
@@ -257,7 +255,6 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
       document.getElementById('progressBar').style.animationName = ''
       setTimeout( () => { this.matchDeclined = false }, 1000 )
       this.playService.changeQueueState(false)
-      alert('passou pelo cancel function')
 
     }
 

@@ -1,5 +1,9 @@
 <header>
-    
+    <img src="./assets/images/play-icons/sr-hover.png">
+    <span>Ranked solo/duo</span>
+    <span>Draft</span>
+    <span class="map">Summoner1s rift 5v5</span>
+    <a (click)="cancelQueue()" routerLink="/client/play/pvp" class="button-client">Change mode</a>
 </header>
 
 <div class="banners">
@@ -69,7 +73,7 @@
         <img (click)="selectRole('fill')" src="./assets/images/lobby/roles/fill.png">
         <span class="role-name">Fill</span>
     </span>
-    <div class="role-select-button">
+    <div (click)="closeRoleSelect()" class="role-select-button">
         <div *ngIf="roleSelected == null">
             <div class="arrow-up"></div>
             <div class="arrow-right"></div>
