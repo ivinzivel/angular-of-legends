@@ -10,12 +10,12 @@
 
             <span class="game-title">Summoner's<br>Rift</span>
 
-            <p class="game-description">Crush your lane, dive into epic five-on-five team fights, and destroy the enemy nexus in League's premier competitive mode.</p>
+            <p [ngClass]="{'game-description-visible': gameMode == 1}" class="game-description">Crush your lane, dive into epic five-on-five team fights, and destroy the enemy nexus in League's premier competitive mode.</p>
 
-            <ul class="game-options">
+            <ul *ngIf="gameMode == 1" class="game-options">
 
                 <li class="option">
-                    <input type="radio" id="blindPick" checked name="pvpOption">
+                    <input type="radio" disabled id="blindPick" name="pvpOption">
                     <label for="blindPick">Blind Pick</label>
                 </li>
                 <li class="option">
@@ -23,11 +23,11 @@
                     <label for="draftPick">Draft Pick</label>
                 </li>
                 <li class="option">
-                    <input type="radio" id="soloDuo" name="pvpOption">
+                    <input type="radio" id="soloDuo" checked name="pvpOption">
                     <label for="soloDuo">Ranked Solo/Duo</label>
                 </li>
                 <li class="option">
-                    <input type="radio" id="flex" name="pvpOption">
+                    <input type="radio" disabled id="flex" name="pvpOption">
                     <label for="flex">Ranked Flex</label>
                 </li>
 
@@ -43,6 +43,8 @@
 
             <span class="game-title game-title-lg">Aram</span>
 
+            <p class="game-description">Coming soon.</p>
+
         </li>
 
         <li id="tft" class="game delay3">
@@ -53,6 +55,8 @@
 
             <span class="game-title">Teamfight<br>Tatics</span>
 
+            <p class="game-description">I hate TFT, will never come soon.</p>
+
         </li>
 
         <li id="urf" class="game delay4">
@@ -62,6 +66,8 @@
             <span class="game-type">5v5</span>
 
             <span class="game-title game-title-lg">urf</span>
+
+            <p class="game-description">Coming soon.</p>
 
         </li>
 

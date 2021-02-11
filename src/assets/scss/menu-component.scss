@@ -40,6 +40,19 @@
 
             }
 
+            .item-menu-disabled {
+            
+                cursor: not-allowed !important;
+                filter: grayscale(100%);
+
+                &:hover {
+
+                    color: #beb088;
+
+                }
+            
+            }
+
         }
 
     }

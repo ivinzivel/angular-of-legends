@@ -100,8 +100,35 @@
     width: 900px;
     top: calc(50% - 250px);
     left: calc(50% - 450px);
-    bottom: 0;
     transform: scale(1.8);
+
+}
+
+.champion-background {
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://images.wallpapersden.com/image/download/psyops-zed-league-of-legends_bGhtaG6UmZqaraWkpJRmbmdlrWZlbWU.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: FadeIn .2s forwards;
+
+    @keyframes FadeIn {
+        0% {
+
+            opacity: 0;
+            transform: scale(2);
+
+        }
+        100% {
+
+            opacity: 1;
+            transform: scale(1);
+
+        }
+    }
 
 }
 
@@ -118,6 +145,33 @@
 
             display: inline-block;
             padding: 2.8rem .5rem 4rem;
+            position: relative;
+
+            .champion-picture {
+
+                opacity: 0;
+                position: absolute;
+                left: 8px;
+                animation: Entrance 1s forwards;
+
+                @keyframes Entrance {
+                    
+                    0% {
+
+                        transform: scale(2);
+
+                    }
+                    100% {
+
+                        opacity: 1;
+                        transform: scale(1);
+
+                    }
+
+                }
+
+            }
+
 
             img {
 
@@ -372,7 +426,7 @@
             align-items: center;
             justify-items: center;
             justify-content: flex-end;
-            padding: 6px 6px;
+            padding: 3px 6px;
             border-top: 1px solid #785b28;
             border-bottom: 1px solid #785b28;
             box-sizing: border-box;
@@ -578,6 +632,13 @@ main {
 
     }
 
+    .hidde-filters {
+
+        opacity: 0;
+        z-index: -2;
+
+    }
+
     .filters {
 
         width: 100%;
@@ -610,6 +671,17 @@ main {
     
                 }
     
+            }
+
+        }
+
+        .lane-active {
+
+            img {
+
+                opacity: 1;
+                filter: grayscale(100%) brightness(120%);
+
             }
 
         }
@@ -868,13 +940,24 @@ main {
 
         }
 
+        .champion-visible {
+
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 2 !important;
+            transition-duration: .2s;
+
+        }
+
         .champion {
 
             display: inline-block;
             text-align: center ;
             margin: 1rem;
-            transition-duration: .2s;
-            position: relative;
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            z-index: -2;
 
             .champion-select-frame {
 
@@ -992,6 +1075,27 @@ main {
 
     }
 
+    .accept-button-desabled {
+
+        cursor: default !important;
+
+        img { filter: grayscale(100%); }
+
+        &:hover {
+
+            transform: scale(1) !important;
+
+            img {
+
+                filter: brightness(100%) !important;
+                filter: grayscale(100%) !important;
+
+            }
+
+        }
+
+    }
+
     .accept-button {
 
         display: flex;
@@ -1007,7 +1111,6 @@ main {
         img {
             
             transition-duration: .2s;
-            filter: grayscale(100%);
 
         }
 
@@ -1032,95 +1135,8 @@ main {
             img {
 
                 filter: brightness(150%);
-                filter: grayscale(0%);
 
             }
-
-        }
-
-    }
-
-    footer {
-
-        width: 50%;
-        margin: 2rem auto 0;
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        justify-content: space-around;
-
-        .edit-rune {
-
-            width: 35px;
-            height: 35px;
-            background-color: #1e2328;
-            border-radius: 50%;
-            border: 2px solid #9d7730;
-            transition-duration: .2s;
-            cursor: pointer;
-
-            &:hover {
-    
-                transform: scale(1.05);
-                filter: brightness(150%);
-    
-            }
-
-        }
-
-        select {
-
-            background-color: #1e2328;
-            font-size: 1rem;
-            color: #d4bf90;
-            font-weight: bold;
-            border: 2px solid #9d7730;
-            letter-spacing: 1px;
-            padding: .6rem 2rem;
-            transition-duration: .2s;
-            cursor: pointer;
-
-            &:hover {
-    
-                transform: scale(1.05);
-                filter: brightness(150%);
-    
-            }
-
-        }
-
-        .summoners-spells {
-
-            img {
-                
-                width: 42px;
-                padding: 0 4px
-
-            }
-
-        }
-
-        &::after {
-
-            content: '';
-            width: 200px;
-            height: 2px;
-            background-color: #9d773070;
-            position: absolute;
-            left: 0;
-            z-index: 2;
-
-        }
-
-        &::before {
-
-            content: '';
-            width: 200px;
-            height: 2px;
-            background-color: #9d773070;
-            position: absolute;
-            right: 0;
-            z-index: 2;
 
         }
 
@@ -1140,7 +1156,7 @@ main {
             width: 900px;
             animation: Rotate 60s infinite linear;
             position: relative;
-            top: -150px;
+            top: calc(50% - 450px);
 
             @keyframes Rotate {
                 
@@ -1157,6 +1173,46 @@ main {
 
             }
 
+
+        }
+
+    }
+
+    .champion-finalization {
+
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 2rem;
+
+        .champion-name {
+
+            color: white;
+            font-size: 1.5rem;
+            font-style: italic;
+            font-family: 'Roboto';
+
+        }
+
+        .skins {
+
+            padding-top: 1rem;
+
+            .skin {
+
+                width: 145px;
+                height: 85px;
+                border: 2px solid #9a8048;
+                margin: 0 auto;
+                overflow: hidden;
+
+                img {
+
+                    width: 120%;
+
+                }
+
+            }
 
         }
 
@@ -1221,6 +1277,96 @@ main {
             width: 0%;
 
         }
+    }
+
+}
+
+footer {
+
+    width: 800px;
+    margin: 2rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50% - 400px);
+
+    .edit-rune {
+
+        width: 35px;
+        height: 35px;
+        background-color: #1e2328;
+        border-radius: 50%;
+        border: 2px solid #9d7730;
+        transition-duration: .2s;
+        cursor: pointer;
+
+        &:hover {
+
+            transform: scale(1.05);
+            filter: brightness(150%);
+
+        }
+
+    }
+
+    select {
+
+        background-color: #1e2328;
+        font-size: 1rem;
+        color: #d4bf90;
+        font-weight: bold;
+        border: 2px solid #9d7730;
+        letter-spacing: 1px;
+        padding: .6rem 2rem;
+        margin: 0 2rem;
+        transition-duration: .2s;
+        cursor: pointer;
+
+        &:hover {
+
+            transform: scale(1.05);
+            filter: brightness(150%);
+
+        }
+
+    }
+
+    .summoners-spells {
+
+        img {
+            
+            width: 42px;
+            padding: 0 4px
+
+        }
+
+    }
+
+    &::after {
+
+        content: '';
+        width: 200px;
+        height: 2px;
+        background-color: #9d773070;
+        position: absolute;
+        left: 0;
+        z-index: 2;
+
+    }
+
+    &::before {
+
+        content: '';
+        width: 200px;
+        height: 2px;
+        background-color: #9d773070;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+
     }
 
 }

@@ -4,6 +4,8 @@
     <source src="./assets/images/champion-select/mid.mp4" type="video/mp4">
 </video>
 
+<div *ngIf="loadOutPeriod" style="background-image: url('{{ currentChampionSelected.coverPicture }}');" class="champion-background"></div>
+
 <div id="assigned" class="assigned-container">
     <span class="assigned">You were assigned</span>
     <span class="role">Middle</span>
@@ -14,14 +16,26 @@
 <aside class="ally-team">
 
     <ul class="ally-bans">
-        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
-        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
-        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
+        <li>
+            <img src="./assets/images/champion-select/ban-icon.png">
+            <img *ngIf="banReviewPeriod || pickPeriod || loadOutPeriod" class="champion-picture" src="{{ allyBans[0].picture }}">
+        </li>
+        <li>
+            <img src="./assets/images/champion-select/ban-icon.png">
+            <img *ngIf="banReviewPeriod || pickPeriod || loadOutPeriod" class="champion-picture" src="{{ allyBans[1].picture }}">
+        </li>
+        <li>
+            <img src="./assets/images/champion-select/ban-icon.png">
+            <img *ngIf="banReviewPeriod || pickPeriod || loadOutPeriod" class="champion-picture" src="{{ allyBans[2].picture }}">
+        </li>
         <li>
             <img *ngIf="currentChampionBanSelected == null" src="./assets/images/champion-select/ban-icon.png">
             <img *ngIf="currentChampionBanSelected !== null" src="{{ currentChampionBanSelected.picture }}">
         </li>
-        <li><img src="./assets/images/champion-select/ban-icon.png"></li>
+        <li>
+            <img src="./assets/images/champion-select/ban-icon.png">
+            <img *ngIf="banReviewPeriod || pickPeriod || loadOutPeriod" class="champion-picture" src="{{ allyBans[3].picture }}">
+        </li>
     </ul>
 
     <ul class="ally-team-champs">
@@ -31,12 +45,13 @@
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
             </div>
-            <img id="champPreview1" class="champion-preview delay1" src="./assets/images/champion-select/roles/adc.png">
+            <img *ngIf="!pickPeriod && !loadOutPeriod" id="champPreview1" class="champion-preview delay1" src="./assets/images/champion-select/roles/adc.png">
+            <img *ngIf="pickPeriod || loadOutPeriod" class="champion-preview delay1" src="{{ allyPicks[0].picture }}">
             <div id="playerInfo1" class="informations delay1">
                 <!-- <span class="picking">Picking...</span> -->
-                <span class="champion-name">Zed</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="champion-name">{{ allyPicks[0].name }}</span>
                 <span class="role">Bottom</span>
-                <span class="user-name">Ivinzivel</span>
+                <span class="user-name">Jhon</span>
             </div>
         </li>
         <li id="player2" class="ally-team-champs-intro-animation">
@@ -44,12 +59,13 @@
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
             </div>
-            <img id="champPreview2" class="champion-preview delay2" src="./assets/images/champion-select/roles/jg.png">
+            <img *ngIf="!pickPeriod && !loadOutPeriod" id="champPreview2" class="champion-preview delay2" src="./assets/images/champion-select/roles/jg.png">
+            <img *ngIf="pickPeriod || loadOutPeriod" class="champion-preview delay1" src="{{ allyPicks[1].picture }}">
             <div id="playerInfo2" class="informations delay2">
                 <!-- <span class="picking">Picking...</span> -->
-                <span class="champion-name">Zed</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="champion-name">{{ allyPicks[1].name }}</span>
                 <span class="role">Jungle</span>
-                <span class="user-name">Ivinzivel</span>
+                <span class="user-name">Mark</span>
             </div>
         </li>
         <li id="player3" class="ally-team-champs-intro-animation">
@@ -57,12 +73,13 @@
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
             </div>
-            <img id="champPreview3" class="champion-preview delay3" src="./assets/images/champion-select/roles/top.png">
+            <img *ngIf="!pickPeriod && !loadOutPeriod" id="champPreview3" class="champion-preview delay3" src="./assets/images/champion-select/roles/top.png">
+            <img *ngIf="pickPeriod || loadOutPeriod" class="champion-preview delay1" src="{{ allyPicks[2].picture }}">
             <div id="playerInfo3" class="informations delay3">
                 <!-- <span class="picking">Picking...</span> -->
-                <span class="champion-name">Zed</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="champion-name">{{ allyPicks[2].name }}</span>
                 <span class="role">Top</span>
-                <span class="user-name">Ivinzivel</span>
+                <span class="user-name">Fabriccio</span>
             </div>
         </li>
         <li id="player4" class="ally-team-champs-intro-animation">
@@ -84,12 +101,13 @@
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
                 <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
             </div>
-            <img id="champPreview5" class="champion-preview delay5" src="./assets/images/champion-select/roles/sup.png">
+            <img *ngIf="!pickPeriod && !loadOutPeriod" id="champPreview5" class="champion-preview delay5" src="./assets/images/champion-select/roles/sup.png">
+            <img *ngIf="pickPeriod || loadOutPeriod" class="champion-preview delay1" src="{{ allyPicks[3].picture }}">
             <div id="playerInfo5" class="informations delay5">
                 <!-- <span class="picking">Picking...</span> -->
-                <span class="champion-name">Zed</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="champion-name">{{ allyPicks[3].name }}</span>
                 <span class="role">Support</span>
-                <span class="user-name">Ivinzivel</span>
+                <span class="user-name">Mary</span>
             </div>
         </li>
 
@@ -102,6 +120,7 @@
     <span *ngIf="pickPeriod" class="announcement">Choose your champion!</span>
     <span *ngIf="declarePeriod" class="announcement">Declare your champion!</span>
     <span *ngIf="banPeriod" class="announcement">Ban a champion!</span>
+    <span *ngIf="loadOutPeriod" class="announcement">Choose your loadout!</span>
     <span *ngIf="!banReviewPeriod" class="announcement-timer">{{ timerNumber }}</span>
 
     <div id="allyBarWrapper" class="ally-progress-bar">
@@ -111,21 +130,21 @@
         <span id="enemyBar" class="bar"></span>
     </div>
 
-    <ul class="filters">
-        <li class="lane">
-            <img src="./assets/images/lobby/roles/top.png">
+    <ul class="filters" [ngClass]="{'hidde-filters': loadOutPeriod || banReviewPeriod}">
+        <li [ngClass]="{'lane-active': filter == 'top'}" class="lane">
+            <img (click)="changeFilter('top')" src="./assets/images/lobby/roles/top.png">
         </li>
-        <li class="lane">
-            <img src="./assets/images/lobby/roles/jg.png">
+        <li [ngClass]="{'lane-active': filter == 'jg'}" class="lane">
+            <img (click)="changeFilter('jg')" src="./assets/images/lobby/roles/jg.png">
         </li>
-        <li class="lane">
-            <img src="./assets/images/lobby/roles/mid.png">
+        <li [ngClass]="{'lane-active': filter == 'mid'}" class="lane">
+            <img (click)="changeFilter('mid')" src="./assets/images/lobby/roles/mid.png">
         </li>
-        <li class="lane">
-            <img src="./assets/images/lobby/roles/adc.png">
+        <li [ngClass]="{'lane-active': filter == 'adc'}" class="lane">
+            <img (click)="changeFilter('adc')" src="./assets/images/lobby/roles/adc.png">
         </li>
-        <li class="lane sup">
-            <img src="./assets/images/lobby/roles/sup.png">
+        <li [ngClass]="{'lane-active': filter == 'sup'}" class="lane sup">
+            <img (click)="changeFilter('sup')" src="./assets/images/lobby/roles/sup.png">
         </li>
     </ul>
 
@@ -138,24 +157,28 @@
             <ul>
                 
                 <li class="ban">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
-                    <span>None</span>
+                    <img src="{{ allyBans[0].picture }}">
+                    <img *ngIf="allyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ allyBans[0].name }}</span>
                 </li>
                 <li class="ban">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
-                    <span>None</span>
+                    <img src="{{ allyBans[1].picture }}">
+                    <img *ngIf="allyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ allyBans[1].name }}</span>
                 </li>
                 <li class="ban">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
-                    <span>None</span>
+                    <img src="{{ allyBans[2].picture }}">
+                    <img *ngIf="allyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ allyBans[2].name }}</span>
                 </li>
                 <li class="ban">
                     <img src="{{ currentChampionBanSelected.picture }}">
                     <span>{{ currentChampionBanSelected.name }}</span>
                 </li>
                 <li class="ban">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
-                    <span>None</span>
+                    <img src="{{ allyBans[3].picture }}">
+                    <img *ngIf="allyBans == null" src="https://ddragon.leagueoflegends.com/cdn/10.18.1/img/profileicon/29.png">
+                    <span>{{ allyBans[3].name }}</span>
                 </li>
 
             </ul>
@@ -203,7 +226,7 @@
     </div>
 
     <ul id="chamiponList" class="champion-list">
-        <li *ngFor="let champion of champions; let championIndex = index" [ngClass]="{'champion-desable': champion.selectable == false}" (click)="selectChampion(champion, championIndex)" class="champion">
+        <li *ngFor="let champion of champions; let championIndex = index" [ngClass]="{'champion-desable': champion.selectable == false, 'champion-visible': champion.role == filter || filter == 'all'}" (click)="selectChampion(champion, championIndex)" class="champion">
             <img src="{{ champion.picture }}" class="champion-picture">
             <span class="champion-name">{{ champion.name }}</span>
             <span *ngIf="currentChampionSelected == champion" class="champion-select-frame">
@@ -221,37 +244,46 @@
         <img class="lined-circle" src="./assets/images/champion-select/lined-circle.png">
     </div>
 
-    <img class="button-detail button-detail-left" src="./assets/images/champion-select/accept-button-detail.png">
-    <img class="button-detail button-detail-right" src="./assets/images/champion-select/accept-button-detail.png">
+    <div *ngIf="loadOutPeriod" class="champion-finalization">
+        <span class="champion-name">{{ currentChampionSelected.name }}</span>
+        <div class="skins">
+            <div class="skin">
+                <img src="{{ currentChampionSelected.coverPicture }}">
+            </div>
+        </div>
+    </div>
+
+    <img *ngIf="!declarePeriod && !banReviewPeriod && !loadOutPeriod" class="button-detail button-detail-left" src="./assets/images/champion-select/accept-button-detail.png">
+    <img *ngIf="!declarePeriod && !banReviewPeriod && !loadOutPeriod" class="button-detail button-detail-right" src="./assets/images/champion-select/accept-button-detail.png">
     
-    <span *ngIf="pickPeriod" (click)="pickChampion()" class="accept-button">
+    <span *ngIf="pickPeriod" [ngClass]="{'accept-button-desabled ': !currentChampionSelected}" (click)="pickChampion()" class="accept-button">
         <span>Lock in</span>
         <img src="./assets/images/champion-select/accept-button.png">
     </span>
     
-    <span *ngIf="banPeriod" (click)="banChampion()" class="accept-button">
+    <span *ngIf="banPeriod" [ngClass]="{'accept-button-desabled ': !currentChampionBanSelected}" (click)="banChampion()" class="accept-button">
         <span>Ban</span>
         <img src="./assets/images/champion-select/ban-button.png">
     </span>
 
-    <footer>
-
-        <button class="edit-rune">
-            <img src="./assets/images/champion-select/rune-edit.png">
-        </button>
-
-        <select>
-            <option value="">First rune</option>
-        </select>
-
-        <div class="summoners-spells">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
-            <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
-        </div>
-
-    </footer>
-
 </main>
+
+<footer>
+
+    <button class="edit-rune">
+        <img src="./assets/images/champion-select/rune-edit.png">
+    </button>
+
+    <select>
+        <option value="">First rune</option>
+    </select>
+
+    <div class="summoners-spells">
+        <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerDot.png">
+        <img src="https://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/SummonerFlash.png">
+    </div>
+
+</footer>
 
 <aside class="enemy-team">
 
@@ -283,51 +315,51 @@
         <li>
             <div class="informations">
                 <!-- <span class="picking">Picking...</span> -->
-                <span *ngIf="pickPeriod" class="role">{{ champions[24].name }}</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="role">{{ enemyPicks[0].name }}</span>
                 <span class="user-name">Summoner 1</span>
             </div>
             <div class="champion-preview">
-                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[24].picture }}">
+                <img *ngIf="pickPeriod || loadOutPeriod"  width="100%" src="{{ enemyPicks[0].picture }}">
             </div>
         </li>
         <li>
             <div class="informations">
                 <!-- <span class="picking">Picking...</span> -->
-                <span *ngIf="pickPeriod" class="role">{{ champions[72].name }}</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="role">{{ enemyPicks[1].name }}</span>
                 <span class="user-name">Summoner 2</span>
             </div>
             <div class="champion-preview">
-                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[72].picture }}">
+                <img *ngIf="pickPeriod || loadOutPeriod"  width="100%" src="{{ enemyPicks[1].picture }}">
             </div>
         </li>
         <li>
             <div class="informations">
                 <!-- <span class="picking">Picking...</span> -->
-                <span *ngIf="pickPeriod" class="role">{{ champions[120].name }}</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="role">{{ enemyPicks[2].name }}</span>
                 <span class="user-name">Summoner 3</span>
             </div>
             <div class="champion-preview">
-                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[120].picture }}">
+                <img *ngIf="pickPeriod || loadOutPeriod"  width="100%" src="{{ enemyPicks[2].picture }}">
             </div>
         </li>
         <li>
             <div class="informations">
                 <!-- <span class="picking">Picking...</span> -->
-                <span *ngIf="pickPeriod" class="role">{{ champions[5].name }}</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="role">{{ enemyPicks[3].name }}</span>
                 <span class="user-name">Summoner 4</span>
             </div>
             <div class="champion-preview">
-                <img *ngIf="pickPeriod"  width="100%" src="{{ champions[5].picture }}">
+                <img *ngIf="pickPeriod || loadOutPeriod"  width="100%" src="{{ enemyPicks[3].picture }}">
             </div>
         </li>
         <li>
             <div class="informations">
                 <!-- <span class="picking">Picking...</span> -->
-                <span *ngIf="pickPeriod" class="role">{{ champions[129].name }}</span>
+                <span *ngIf="pickPeriod || loadOutPeriod" class="role">{{ enemyPicks[4].name }}</span>
                 <span class="user-name">Summoner 5</span>
             </div>
             <div class="champion-preview">
-                <img *ngIf="pickPeriod" width="100%" src="{{ champions[129].picture }}">
+                <img *ngIf="pickPeriod || loadOutPeriod" width="100%" src="{{ enemyPicks[4].picture }}">
             </div>
         </li>
 

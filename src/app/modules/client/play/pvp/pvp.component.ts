@@ -8,6 +8,8 @@ import { BackgroundService } from '../../background.service';
 })
 export class PvpComponent implements OnInit {
 
+  gameMode: number = 1
+
   constructor(private backgroundService: BackgroundService) {
 
     this.backgroundService.changeBackground({ 

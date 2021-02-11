@@ -4,7 +4,8 @@ import { ChampionSelectComponent } from './champion-select/champion-select.compo
 
 const routes: Routes = [
 
-  { path: 'champion-select', component: ChampionSelectComponent }
+  { path: 'champion-select', component: ChampionSelectComponent },
+  { path: 'loading' }
 
 ];
 

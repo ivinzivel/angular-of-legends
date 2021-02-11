@@ -72,6 +72,16 @@ ul {
             text-align: left;
             padding: 1rem;
             border-bottom: 1px solid #ffffff2f;
+            opacity: 0;
+            transition-duration: .2s;
+            transform: translateY(-20px);
+
+        }
+
+        .game-description-visible {
+
+            opacity: 1;
+            transform: translateY(0);
 
         }
 
@@ -115,6 +125,25 @@ ul {
                 
                 }
 
+                input[type="radio"]:disabled + label::before {
+
+                    filter: grayscale(100%);
+
+                }
+
+                input[type="radio"]:disabled + label {
+
+                    cursor: default;
+                    filter: grayscale(100%);
+
+                    &:hover {
+
+                        color: #beb088 !important;
+
+                    }
+
+                }
+
                 input[type="radio"] + label::before {
 
                     content: "";
@@ -149,6 +178,17 @@ ul {
                     transform: rotate(230deg);
 
                 }
+
+            }
+
+        }
+
+        &:hover {
+
+            .game-description {
+
+                opacity: 1;
+                transform: translateY(0px);
 
             }
 
