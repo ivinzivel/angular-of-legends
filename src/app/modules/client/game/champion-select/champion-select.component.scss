@@ -1054,6 +1054,18 @@ main {
 
     }
 
+    #modelViewer {
+
+        width: 800px;
+
+        canvas {
+
+            width: 800px !important;
+
+        }
+
+    }
+
     .button-detail {
 
         position: absolute;
