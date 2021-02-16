@@ -874,6 +874,8 @@ main {
                     
                     width: 85px;
                     display: block;
+                    border: 1px solid rgba(255, 255, 255, 0.103);
+                    box-sizing: border-box;
                 
                 }
 
@@ -1030,6 +1032,8 @@ main {
                 height: 85px;
                 display: block;
                 cursor: pointer;
+                border: 2px solid #ffffff70;
+                box-sizing: border-box;
 
             }
 

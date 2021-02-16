@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { GameRoutingModule } from './game-routing.module';
 import { ChampionSelectComponent } from './champion-select/champion-select.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
-  declarations: [ChampionSelectComponent],
+  declarations: [ChampionSelectComponent, LoadingComponent],
   imports: [
     CommonModule,
     GameRoutingModule

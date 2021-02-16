@@ -1,0 +1,184 @@
+.container {
+
+    background-image: url('./../../../../../assets/images/loading-screen/loading-screen-wallpaper.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    .teams {
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        .team {
+
+            color: white;
+            font-size: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2rem 0;
+
+        }
+
+        li {
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            width: 250px;
+            margin: 0 1rem;
+
+            footer {
+
+                width: 100%;
+                height: 110px;
+                background: rgb(255,0,36);
+                background: linear-gradient(180deg, #ff002400 0%, #000000a8 30%);
+                margin-top: 282px;
+                text-align: center;
+                position: relative;
+
+                .profile-image {
+
+                    display: block;
+                    width: 50px;
+                    margin: .8rem auto 4px;
+                    border-radius: 50%;
+                    border: 2px solid #c69f43;
+
+                }
+
+                .player-name {
+
+                    padding-top: 12px;
+
+                }
+
+                .summoners-spells {
+
+                    position: absolute;
+                    bottom: 26px;
+                    left: 2px;
+
+                    img {
+
+                        width: 34px;
+                        margin: 0 .2rem;
+                        border: 2px solid #6464627c;
+                        box-sizing: border-box;
+
+                    }
+
+                }
+
+                .runes {
+
+                    position: absolute;
+                    bottom: 23px;
+                    right: -14px;
+
+                    img {
+
+                        background-color: #000000b9;
+                        border-radius: 50%;
+                        border: 2px solid #c69f43;
+                        padding: 2px;
+
+                    }
+
+                    .primary-rune {
+
+                        width: 40px;
+                        position: relative;
+                        z-index: 1;
+
+                    }
+
+                    .secondary-rune {
+
+                        width: 25px;
+                        position: relative;
+                        z-index: 2;
+                        top: 10px;
+                        left: -20px;
+
+                    }
+
+
+                }
+
+                &::before {
+
+                    content: '';
+                    position: absolute;
+                    top: 1.2rem;
+                    left: 0;
+                    background-image: url('./../../../../../assets/images/loading-screen/loading-screen-detail.png');
+                    width: 85px;
+                    height: 15px;
+
+                }
+
+                &::after {
+
+                    content: '';
+                    position: absolute;
+                    top: 1.2rem;
+                    right: 0;
+                    background-image: url('./../../../../../assets/images/loading-screen/loading-screen-detail.png');
+                    width: 85px;
+                    height: 15px;
+                    transform: rotateY(180deg);
+
+                }
+
+            }
+
+        }
+
+        .blue-team {
+
+            li {
+                border: 4px solid #5a6dad;
+                box-sizing: border-box;
+            }
+
+        }
+
+        .red-team {
+
+            li {
+                border: 4px solid #763c31;
+                box-sizing: border-box;
+            }
+
+        }
+
+    }
+
+}
+
+.three-hundred-sixty-pixels {
+
+    background-position: 360px !important;
+
+}
+
+.three-hundred-ninety-pixels {
+
+    background-position: 390px !important;
+
+}
+
+.two-hundred-sixty-five-pixels {
+
+    background-position: 265px !important;
+
+}

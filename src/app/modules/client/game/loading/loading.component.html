@@ -1,0 +1,103 @@
+<div class="container">
+
+    <div class="teams">
+
+        <ul class="team blue-team">
+            <li class="blue-team" style="background-image: url('{{allyTeam[0].coverPicture}}');">
+                <footer>
+                    <span class="champion-name">{{allyTeam[0].name}}</span>
+                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                    <span class="player-name">Teste</span>
+                    <div class="summoners-spells">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                    </div>
+                    <div class="runes">
+                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                    </div>
+                </footer>
+            </li>
+            <li class="blue-team" style="background-image: url('{{allyTeam[1].coverPicture}}');">
+                <footer>
+                    <span class="champion-name">{{allyTeam[1].name}}</span>
+                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                    <span class="player-name">Teste</span>
+                    <div class="summoners-spells">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                    </div>
+                    <div class="runes">
+                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                    </div>
+                </footer>
+            </li>
+            <li class="blue-team" [ngClass]="adjustChampion(playerPick.name)" style="background-image: url('{{playerPick.coverPicture}}')">
+                <footer>
+                    <span class="champion-name">{{playerPick.name}}</span>
+                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                    <span class="player-name">Teste</span>
+                    <div class="summoners-spells">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                    </div>
+                    <div class="runes">
+                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                    </div>
+                </footer>
+            </li>
+            <li class="blue-team" style="background-image: url('{{allyTeam[2].coverPicture}}');">
+                <footer>
+                    <span class="champion-name">{{allyTeam[2].name}}</span>
+                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                    <span class="player-name">Teste</span>
+                    <div class="summoners-spells">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                    </div>
+                    <div class="runes">
+                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                    </div>
+                </footer>
+            </li>
+            <li class="blue-team" style="background-image: url('{{allyTeam[3].coverPicture}}');">
+                <footer>
+                    <span class="champion-name">{{allyTeam[3].name}}</span>
+                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                    <span class="player-name">Teste</span>
+                    <div class="summoners-spells">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                    </div>
+                    <div class="runes">
+                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                    </div>
+                </footer>
+            </li>
+        </ul>
+
+        <ul class="team red-team">
+            <li *ngFor="let enemy of enemyTeam" [ngClass]="adjustChampion(enemy.name)" class="blue-team" style="background-image: url('{{enemy.coverPicture}}')">
+                <footer>
+                    <span class="champion-name">{{enemy.name}}</span>
+                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                    <span class="player-name">Teste</span>
+                    <div class="summoners-spells">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                    </div>
+                    <div class="runes">
+                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                    </div>
+                </footer>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
