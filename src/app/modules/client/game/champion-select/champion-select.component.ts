@@ -10,7 +10,7 @@ export class ChampionSelectComponent implements OnInit {
 
   champions: any = [
     {name: 'Ahri', role: 'mid', picture: 'https://www.mobafire.com/images/avatars/ahri-classic.png', selectable: true, coverPicture: 'https://cdn1.dotesports.com/wp-content/uploads/sites/3/2020/07/25201017/Ahri_0.jpg'},
-    {name: 'Aatrox', role: 'top', picture: 'https://www.mobafire.com/images/avatars/aatrox-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox  _0.jpg'},
+    {name: 'Aatrox', role: 'top', picture: 'https://www.mobafire.com/images/avatars/aatrox-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg'},
     {name: 'Akali', role: 'mid', picture: 'https://www.mobafire.com/images/avatars/akali-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg'},
     {name: 'Alistar', role: 'sup', picture: 'https://www.mobafire.com/images/avatars/alistar-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg'},
     {name: 'Amumu', role: 'jg', picture: 'https://www.mobafire.com/images/avatars/amumu-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg'},
@@ -24,7 +24,7 @@ export class ChampionSelectComponent implements OnInit {
     {name: 'Blitzcrank', role: 'sup', picture: 'https://www.mobafire.com/images/avatars/blitzcrank-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg'},
     {name: 'Brand', role: 'sup', picture: 'https://www.mobafire.com/images/avatars/brand-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_2.jpg'},
     {name: 'Braum', role: 'sup', picture: 'https://www.mobafire.com/images/avatars/braum-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg'},
-    {name: 'Caitlyn', role: 'adc', picture: 'https://www.mobafire.com/images/avatars/caitlyn-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg'},
+    {name: 'Caitlyn', role: 'adc', picture: 'https://www.mobafire.com/images/avatars/caitlyn-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg'},
     {name: 'Camille', role: 'top', picture: 'https://www.mobafire.com/images/avatars/camille-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg'},
     {name: 'Cassiopeia', role: 'mid', picture: 'https://www.mobafire.com/images/avatars/cassiopeia-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg'},
     {name: "Cho'Gatch", role: 'top', picture: 'https://www.mobafire.com/images/avatars/chogath-classic.png', selectable: true, coverPicture: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg'},
@@ -171,7 +171,7 @@ export class ChampionSelectComponent implements OnInit {
   pickPeriod: boolean = false
   loadOutPeriod: boolean = false
 
-  filter: string = 'mid'
+  filter: string = 'all'
 
   timerActive: boolean = false
   timerNumber: number = 15

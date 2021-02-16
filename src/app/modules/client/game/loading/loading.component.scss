@@ -1,11 +1,21 @@
+.video-background {
+    
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: scale(1.8);
+
+}
+
 .container {
 
-    background-image: url('./../../../../../assets/images/loading-screen/loading-screen-wallpaper.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: 100vh;
+    backdrop-filter: blur(6px);
+    background: rgb(0,224,255);
+    background: linear-gradient(180deg, rgba(0,224,255,0.2497373949579832) 0%, rgba(135,105,139,0) 50%, rgba(255,0,36,0.25) 100%);
 
     .teams {
 
@@ -14,6 +24,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        transition-duration: .2s;
 
         .team {
 
@@ -34,16 +45,21 @@
             height: 400px;
             width: 250px;
             margin: 0 1rem;
+            transition-duration: .5s;
+            transform: scale(1);
+            overflow: hidden;
+            opacity: 0;
 
-            footer {
+            .informations {
 
                 width: 100%;
-                height: 110px;
+                height: 510px;
                 background: rgb(255,0,36);
                 background: linear-gradient(180deg, #ff002400 0%, #000000a8 30%);
                 margin-top: 282px;
                 text-align: center;
                 position: relative;
+                transition-duration: .5s;
 
                 .profile-image {
 
@@ -57,14 +73,21 @@
 
                 .player-name {
 
+                    font-size: 14px;
                     padding-top: 12px;
+
+                }
+
+                .current-player {
+
+                    color: #c69f43;
 
                 }
 
                 .summoners-spells {
 
                     position: absolute;
-                    bottom: 26px;
+                    top: 42px;
                     left: 2px;
 
                     img {
@@ -81,7 +104,7 @@
                 .runes {
 
                     position: absolute;
-                    bottom: 23px;
+                    top: 30px;
                     right: -14px;
 
                     img {
@@ -139,29 +162,242 @@
 
                 }
 
+                .rank {
+
+                    img {
+                    
+                        padding-top: 32px;
+                        width: 160px;
+                    }
+
+                    span {
+
+                        color: #ffffffad;
+                        font-size: 18px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        display: block;
+
+                    }
+
+                    .tier {
+
+                        font-size: 18px;
+
+                    }
+
+                    .lp {
+
+                        padding-top: 12px;
+                        font-size: 14px;
+
+                    }
+
+                }
+
+                .maestry {
+
+                    img {
+                    
+                        padding-top: 32px;
+                        width: 60px;
+                    
+                    }
+
+                    .points {
+
+                        color: #ffffffad;
+                        font-size: 12px;
+                        display: block;
+
+                    }
+
+                }
+
+            }
+
+            &:hover {
+
+                transform: scale(1.1) !important;
+                box-shadow: 0 0 60px rgba(0, 0, 0, 0.500);
+
+                .informations {
+
+                    backdrop-filter: blur(3px);
+                    transform: translateY(-390px);
+
+                }
+
             }
 
         }
 
         .blue-team {
 
+            position: relative;
+            left: -12px;
+
             li {
-                border: 4px solid #5a6dad;
-                box-sizing: border-box;
+
+                animation: FadeInDown 1s forwards;
+                position: relative;
+
+                @keyframes FadeInDown {
+                    
+                    0% {
+
+                        opacity: 0;
+                        top: -80px;
+
+                    }
+                    100% {
+
+                        opacity: 1;
+                        top: 0;
+
+                    }
+
+                }
+
+                &:nth-child(2) {
+
+                    animation-delay: .2s;
+
+                }
+
+                &:nth-child(3) {
+
+                    animation-delay: .3s;
+
+                }
+
+                &:nth-child(4) {
+
+                    animation-delay: .4s;
+
+                }
+
+                &:nth-child(5) {
+
+                    animation-delay: .5s;
+
+                }
+
             }
 
         }
 
         .red-team {
 
+            position: relative;
+            right: -12px;
+
             li {
-                border: 4px solid #763c31;
-                box-sizing: border-box;
+
+                animation: FadeInUp 1s forwards;
+                position: relative;
+
+                @keyframes FadeInUp {
+                    
+                    0% {
+
+                        opacity: 0;
+                        bottom: 80px;
+
+                    }
+                    100% {
+
+                        opacity: 1;
+                        bottom: 0;
+
+                    }
+
+                }
+
+                &:nth-child(1) {
+
+                    animation-delay: .5s;
+
+                }
+
+                &:nth-child(2) {
+
+                    animation-delay: .4s;
+
+                }
+
+                &:nth-child(3) {
+
+                    animation-delay: .3s;
+
+                }
+
+                &:nth-child(4) {
+
+                    animation-delay: .2s;
+
+                }
+
             }
 
         }
 
     }
+
+}
+
+.two-hundred-sixty-five-pixels {
+
+    background-position: 265px !important;
+
+}
+
+.two-hundred-seventy-five-pixels {
+
+    background-position: 275px !important;
+
+}
+
+.two-hundred-ninety-pixels {
+
+    background-position: 290px !important;
+
+}
+
+.two-hundred-ninety-five-pixels {
+
+    background-position: 295px !important;
+
+}
+
+.three-hundred-pixels {
+
+    background-position: 300px !important;
+
+}
+
+.three-hundred-ten-pixels {
+
+    background-position: 310px !important;
+
+}
+
+.three-hundred-fifteen-pixels {
+
+    background-position: 315px !important;
+
+}
+
+.three-hundred-twenty-five-pixels {
+
+    background-position: 325px !important;
+
+}
+
+.three-hundred-fourty-five-pixels {
+
+    background-position: 345px !important;
 
 }
 
@@ -177,8 +413,38 @@
 
 }
 
-.two-hundred-sixty-five-pixels {
+.four-hundred-pixels {
 
-    background-position: 265px !important;
+    background-position: 400px !important;
+
+}
+
+.four-hundred-fifteen-pixels {
+
+    background-position: 415px !important;
+
+}
+
+.four-hundred-thirty-pixels {
+
+    background-position: 430px !important;
+
+}
+
+.four-hundred-forty-pixels {
+
+    background-position: 440px !important;
+
+}
+
+.four-hundred-seventy-pixels {
+
+    background-position: 470px !important;
+
+}
+
+.five-hundred-forty-pixels {
+
+    background-position: 540px !important;
 
 }
