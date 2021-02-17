@@ -7,123 +7,133 @@
     <div class="teams">
 
         <ul id="blueTeam" class="team blue-team">
-            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[0].name)" style="background-image: url('{{allyTeam[0].coverPicture}}');">
-                <div class="informations">
-                    <span class="champion-name">{{allyTeam[0].name}}</span>
-                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
-                    <span class="player-name">Teste</span>
-                    <div class="summoners-spells">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
-                    </div>
-                    <div class="runes">
-                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
-                    </div>
-                    <div class="rank">
-                        <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
-                        <span class="tier">Diamound III</span>
-                        <span class="lp">87 lp</span>
-                    </div>
-                    <div class="maestry">
-                        <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
-                        <span class="points">2.000.000</span>
+            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[0].name)" style="background-image: url('{{allyTeam[0].coverPicture}}')">
+                <div class="wrapper">
+                    <div class="informations">
+                        <span class="champion-name">{{allyTeam[0].name}}</span>
+                        <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                        <span class="player-name">Teste</span>
+                        <div class="summoners-spells">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        </div>
+                        <div class="runes">
+                            <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                        </div>
+                        <div class="rank">
+                            <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
+                            <span class="tier">Diamound III</span>
+                            <span class="lp">87 lp</span>
+                        </div>
+                        <div class="maestry">
+                            <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
+                            <span class="points">2.000.000</span>
+                        </div>
                     </div>
                 </div>
             </li>
-            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[1].name)" style="background-image: url('{{allyTeam[1].coverPicture}}');">
-                <div class="informations">
-                    <span class="champion-name">{{allyTeam[1].name}}</span>
-                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
-                    <span class="player-name">Teste</span>
-                    <div class="summoners-spells">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
-                    </div>
-                    <div class="runes">
-                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
-                    </div>
-                    <div class="rank">
-                        <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
-                        <span class="tier">Diamound III</span>
-                        <span class="lp">87 lp</span>
-                    </div>
-                    <div class="maestry">
-                        <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
-                        <span class="points">2.000.000</span>
+            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[1].name)" style="background-image: url('{{allyTeam[1].coverPicture}}')">
+                <div class="wrapper">
+                    <div class="informations">
+                        <span class="champion-name">{{allyTeam[1].name}}</span>
+                        <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                        <span class="player-name">Teste</span>
+                        <div class="summoners-spells">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        </div>
+                        <div class="runes">
+                            <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                        </div>
+                        <div class="rank">
+                            <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
+                            <span class="tier">Diamound III</span>
+                            <span class="lp">87 lp</span>
+                        </div>
+                        <div class="maestry">
+                            <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
+                            <span class="points">2.000.000</span>
+                        </div>
                     </div>
                 </div>
             </li>
             <li class="blue-team" [ngClass]="adjustChampion(playerPick.name)" style="background-image: url('{{playerPick.coverPicture}}')">
-                <div class="informations">
-                    <span class="champion-name">{{playerPick.name}}</span>
-                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
-                    <span class="current-player player-name">Teste</span>
-                    <div class="summoners-spells">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
-                    </div>
-                    <div class="runes">
-                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
-                    </div>
-                    <div class="rank">
-                        <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
-                        <span class="tier">Diamound III</span>
-                        <span class="lp">87 lp</span>
-                    </div>
-                    <div class="maestry">
-                        <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
-                        <span class="points">2.000.000</span>
-                    </div>
-                </div>
-            </li>
-            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[2].name)" style="background-image: url('{{allyTeam[2].coverPicture}}');">
-                <div class="informations">
-                    <span class="champion-name">{{allyTeam[2].name}}</span>
-                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
-                    <span class="player-name">Teste</span>
-                    <div class="summoners-spells">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
-                    </div>
-                    <div class="runes">
-                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
-                    </div>
-                    <div class="rank">
-                        <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
-                        <span class="tier">Diamound III</span>
-                        <span class="lp">87 lp</span>
-                    </div>
-                    <div class="maestry">
-                        <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
-                        <span class="points">2.000.000</span>
+                <div class="wrapper">
+                    <div class="informations">
+                        <span class="champion-name">{{playerPick.name}}</span>
+                        <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                        <span class="current-player player-name">Teste</span>
+                        <div class="summoners-spells">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        </div>
+                        <div class="runes">
+                            <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                        </div>
+                        <div class="rank">
+                            <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
+                            <span class="tier">Diamound III</span>
+                            <span class="lp">87 lp</span>
+                        </div>
+                        <div class="maestry">
+                            <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
+                            <span class="points">2.000.000</span>
+                        </div>
                     </div>
                 </div>
             </li>
-            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[3].name)" style="background-image: url('{{allyTeam[3].coverPicture}}');">
-                <div class="informations">
-                    <span class="champion-name">{{allyTeam[3].name}}</span>
-                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
-                    <span class="player-name">Teste</span>
-                    <div class="summoners-spells">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[2].name)" style="background-image: url('{{allyTeam[2].coverPicture}}')">
+                <div class="wrapper">
+                    <div class="informations">
+                        <span class="champion-name">{{allyTeam[2].name}}</span>
+                        <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                        <span class="player-name">Teste</span>
+                        <div class="summoners-spells">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        </div>
+                        <div class="runes">
+                            <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                        </div>
+                        <div class="rank">
+                            <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
+                            <span class="tier">Diamound III</span>
+                            <span class="lp">87 lp</span>
+                        </div>
+                        <div class="maestry">
+                            <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
+                            <span class="points">2.000.000</span>
+                        </div>
                     </div>
-                    <div class="runes">
-                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
-                    </div>
-                    <div class="rank">
-                        <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
-                        <span class="tier">Diamound III</span>
-                        <span class="lp">87 lp</span>
-                    </div>
-                    <div class="maestry">
-                        <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
-                        <span class="points">2.000.000</span>
+                </div>
+            </li>
+            <li class="blue-team" [ngClass]="adjustChampion(allyTeam[3].name)" style="background-image: url('{{allyTeam[3].coverPicture}}')">
+                <div class="wrapper">
+                    <div class="informations">
+                        <span class="champion-name">{{allyTeam[3].name}}</span>
+                        <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                        <span class="player-name">Teste</span>
+                        <div class="summoners-spells">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        </div>
+                        <div class="runes">
+                            <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                        </div>
+                        <div class="rank">
+                            <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
+                            <span class="tier">Diamound III</span>
+                            <span class="lp">87 lp</span>
+                        </div>
+                        <div class="maestry">
+                            <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
+                            <span class="points">2.000.000</span>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -131,26 +141,28 @@
 
         <ul id="redTeam" class="team red-team">
             <li *ngFor="let enemy of enemyTeam" [ngClass]="adjustChampion(enemy.name)" class="blue-team" style="background-image: url('{{enemy.coverPicture}}')">
-                <div class="informations">
-                    <span class="champion-name">{{enemy.name}}</span>
-                    <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
-                    <span class="player-name">Teste</span>
-                    <div class="summoners-spells">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
-                    </div>
-                    <div class="runes">
-                        <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
-                        <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
-                    </div>
-                    <div class="rank">
-                        <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
-                        <span class="tier">Diamound I</span>
-                        <span class="lp">27 lp</span>
-                    </div>
-                    <div class="maestry">
-                        <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
-                        <span class="points">25.200</span>
+                <div class="wrapper">
+                    <div class="informations">
+                        <span class="champion-name">{{enemy.name}}</span>
+                        <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon3890.jpg?image=q_auto:best&v=1518361200">
+                        <span class="player-name">Teste</span>
+                        <div class="summoners-spells">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerFlash.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img src="https://opgg-static.akamaized.net/images/lol/spell/SummonerDot.png?image=c_scale,q_auto,w_42&v=1612855207">
+                        </div>
+                        <div class="runes">
+                            <img class="primary-rune" src="https://opgg-static.akamaized.net/images/lol/perk/8439.png?image=c_scale,q_auto,w_42&v=1612855207">
+                            <img class="secondary-rune" src="https://opgg-static.akamaized.net/images/lol/perkStyle/8300.png?image=c_scale,q_auto,w_32&v=1612855207">
+                        </div>
+                        <div class="rank">
+                            <img src="https://i.pinimg.com/originals/6a/10/c7/6a10c7e84c9f4e4aa9412582d28f3fd2.png">
+                            <span class="tier">Diamound I</span>
+                            <span class="lp">27 lp</span>
+                        </div>
+                        <div class="maestry">
+                            <img src="https://i.pinimg.com/originals/3e/d0/4e/3ed04e8a94b7ddc38712c67575210159.png">
+                            <span class="points">25.200</span>
+                        </div>
                     </div>
                 </div>
             </li>

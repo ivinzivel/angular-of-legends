@@ -333,6 +333,7 @@ header {
         text-align: center;
         opacity: 0;
         animation: SlideDown;
+        animation-fill-mode: forwards;
         animation-duration: 1s;
 
         .invite-friend {

@@ -193,6 +193,10 @@
 
     .ally-team-champs {
 
+        position: fixed;
+        top: calc(50vh - 255px);
+        width: calc(50vw - 450px);
+
         li {
 
             display: flex;
@@ -394,6 +398,11 @@
 
     .enemy-team-champs-visible {
 
+        position: fixed;
+        top: calc(50vh - 255px);
+        right: 0;
+        width: calc(50vw - 450px);
+
         li {
 
             animation: FadeInLeft 1s;
@@ -427,8 +436,8 @@
             justify-items: center;
             justify-content: flex-end;
             padding: 3px 6px;
-            border-top: 1px solid #785b28;
-            border-bottom: 1px solid #785b28;
+            border-top: 1px solid #785b2881 !important;
+            border-bottom: 1px solid #785b2881 !important;
             box-sizing: border-box;
             text-align: right;
             opacity: 0;
@@ -1167,12 +1176,29 @@ main {
         z-index: 1;
         overflow: hidden;
 
+        .current-champion-selected {
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 900px;
+            height: 900px;
+            z-index: 1;
+            position: absolute;
+            top: calc(50% - 450px);
+            border-radius: 50%;
+            filter: brightness(120%);
+            overflow: hidden;
+
+        }
+
         .lined-circle {
 
             width: 900px;
             animation: Rotate 60s infinite linear;
             position: relative;
             top: calc(50% - 450px);
+            z-index: 2;
 
             @keyframes Rotate {
                 
@@ -1200,6 +1226,7 @@ main {
         text-align: center;
         position: absolute;
         bottom: 2rem;
+        z-index: 2;
 
         .champion-name {
 

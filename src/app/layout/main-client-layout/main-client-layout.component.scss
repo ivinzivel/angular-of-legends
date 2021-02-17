@@ -14,6 +14,29 @@
 
 }
 
+.background-client-queue {
+
+    opacity: .2 !important;
+
+}
+
+.video-background {
+
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    opacity: 0;
+    transition-duration: .5s;
+
+}
+
+.video-background-visible {
+
+    opacity: .2;
+
+}
+
 .match-found-visible {
 
     opacity: 1 !important;

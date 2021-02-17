@@ -15,7 +15,7 @@
     height: 100vh;
     backdrop-filter: blur(6px);
     background: rgb(0,224,255);
-    background: linear-gradient(180deg, rgba(0,224,255,0.2497373949579832) 0%, rgba(135,105,139,0) 50%, rgba(255,0,36,0.25) 100%);
+    background: linear-gradient(180deg, rgba(0, 225, 255, 0.200) 0%, rgba(135,105,139,0) 50%, rgba(255,0,36,0.200) 100%);
 
     .teams {
 
@@ -43,12 +43,20 @@
             background-size: cover;
             background-position: center;
             height: 400px;
+            border: solid 2px #88652b;
             width: 250px;
             margin: 0 1rem;
             transition-duration: .5s;
             transform: scale(1);
-            overflow: hidden;
             opacity: 0;
+
+            .wrapper {
+
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+
+            }
 
             .informations {
 
@@ -224,7 +232,6 @@
 
                 .informations {
 
-                    backdrop-filter: blur(3px);
                     transform: translateY(-390px);
 
                 }
@@ -284,6 +291,20 @@
 
                 }
 
+                &::after {
+
+                    content: '';
+                    background-image: url('./../../../../../assets/images/loading-screen/border-detail.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 250px;
+                    height: 15px;
+                    position: absolute;
+                    bottom: -15px;
+
+                }
+
             }
 
         }
@@ -303,7 +324,7 @@
                     0% {
 
                         opacity: 0;
-                        bottom: 80px;
+                        bottom: -80px;
 
                     }
                     100% {
@@ -336,6 +357,21 @@
                 &:nth-child(4) {
 
                     animation-delay: .2s;
+
+                }
+
+                &::after {
+
+                    content: '';
+                    background-image: url('./../../../../../assets/images/loading-screen/border-detail.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 250px;
+                    height: 15px;
+                    position: absolute;
+                    top: -15px;
+                    transform: rotateX(160deg);
 
                 }
 

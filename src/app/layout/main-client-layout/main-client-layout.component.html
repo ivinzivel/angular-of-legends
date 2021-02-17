@@ -1,4 +1,8 @@
-<div id="backgroundClient"></div>
+<div [ngClass]="{'background-client-queue': inQueue}" id="backgroundClient"></div>
+
+<video [ngClass]="{'video-background-visible': inQueue}" class="video-background" autoplay loop muted>
+    <source src="./../../../assets/videos/lobby/particles.mp4" type="video/mp4">
+</video>
 
 <div id="matchFound" [ngClass]="{'match-accepted': matchAccepted}" class="match-found">
     

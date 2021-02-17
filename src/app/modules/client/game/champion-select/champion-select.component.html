@@ -4,7 +4,7 @@
     <source src="./assets/images/champion-select/mid.mp4" type="video/mp4">
 </video>
 
-<div *ngIf="loadOutPeriod" style="background-image: url('{{ currentChampionSelected.coverPicture }}');" class="champion-background"></div>
+<div *ngIf="pickPeriod && currentChampionSelected !== null|| loadOutPeriod && currentChampionSelected !== null" style="background-image: url('{{ currentChampionSelected.coverPicture }}')" class="champion-background"></div>
 
 <div id="assigned" class="assigned-container">
     <span class="assigned">You were assigned</span>
@@ -14,9 +14,6 @@
 <div id="overlayBackground" class="overlay-background"></div>
 
 <aside class="ally-team">
-
-
-    <div id="modelViewer"></div>
 
     <ul class="ally-bans">
         <li>
@@ -245,9 +242,10 @@
 
     <div class="lined-circle-wrapper">
         <img class="lined-circle" src="./assets/images/champion-select/lined-circle.png">
+        <div *ngIf="loadOutPeriod && currentChampionSelected !== null" style="background-image: url('{{ currentChampionSelected.coverPicture }}')" class="current-champion-selected"></div>
     </div>
 
-    <div *ngIf="loadOutPeriod" class="champion-finalization">
+    <div *ngIf="loadOutPeriod && currentChampionSelected !== null" class="champion-finalization">
         <span class="champion-name">{{ currentChampionSelected.name }}</span>
         <div class="skins">
             <div class="skin">
