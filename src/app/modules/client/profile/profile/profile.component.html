@@ -1,0 +1,30 @@
+<div [ngClass]="{'overlay-background-visible': !overview}" class="overlay-background"></div>
+
+<nav class="component-menu">
+
+    <ul>
+
+        <li><a (click)="changeBannerVisible(true)" routerLinkActive="item-menu-active" routerLink="overview">Overview</a></li>
+        <li><a (click)="changeBannerVisible(false)" routerLinkActive="item-menu-active" routerLink="match-history">Match History</a></li>
+
+    </ul>
+
+</nav>
+
+<div [ngClass]="{'banner-visible': overview}" class="banner">
+    <div id='playerBanner' class="banner">
+        <div class="player-informations">
+            <span class="player-name">Ivinzivel</span>
+            <img class="rank-image" src="./assets/images/aside-icons/platina.png">
+            <span class="rank-tier">II</span>
+            <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4791.jpg?image=q_auto:best&v=1518361200">
+        </div>
+        <img src="./assets/images/lobby/banner.png">
+    </div>
+</div>
+
+<div class="content">
+
+    <router-outlet></router-outlet>
+
+</div>

@@ -1,0 +1,96 @@
+<ul class="match-history">
+
+    <li *ngFor="let match of matchs" class="match">
+
+        <div class="champion-image-wrapper">
+            <img src="{{ match.playerChampion.picture }}">
+            <span class="champion-level">{{ match.championLevel }}</span>
+        </div>
+
+        <div class="info-match-wrapper">
+            <span [ngClass]="{'victory': match.status == 'Victory', 'defeat': match.status == 'Defeat'}" class="match-status">{{ match.status }}</span>
+            <span class="match-mode">{{ match.gameMode }}</span> 
+            <div class="spells">
+                <img *ngFor="let spell of match.spells" src="{{ spell.image }}">
+            </div>
+        </div>
+
+        <div class="overview-match-wrapper">
+            
+            <div class="items">
+                <span *ngIf="match.items[0]" style="background-image: url('{{ match.items[0].image }}')" class="item"></span>
+                <span *ngIf="!match.items[0]" class="item"></span>
+                <span *ngIf="match.items[1]" style="background-image: url('{{ match.items[1].image }}')" class="item"></span>
+                <span *ngIf="!match.items[1]" class="item"></span>
+                <span *ngIf="match.items[2]" style="background-image: url('{{ match.items[2].image }}')" class="item"></span>
+                <span *ngIf="!match.items[2]" class="item"></span>
+                <span *ngIf="match.items[3]" style="background-image: url('{{ match.items[3].image }}')" class="item"></span>
+                <span *ngIf="!match.items[3]" class="item"></span>
+                <span *ngIf="match.items[4]" style="background-image: url('{{ match.items[4].image }}')" class="item"></span>
+                <span *ngIf="!match.items[4]" class="item"></span>
+                <span *ngIf="match.items[5]" style="background-image: url('{{ match.items[5].image }}')" class="item"></span>
+                <span *ngIf="!match.items[5]" class="item"></span>
+                <span *ngIf="match.items[6]" style="background-image: url('{{ match.items[6].image }}')" class="item"></span>
+                <span *ngIf="!match.items[6]" class="item"></span>
+            </div>
+
+            <div class="info">
+                <span class="score">{{ match.score }}</span>
+                <span class="cs">{{ match.cs }}</span>
+                <span class="gold">{{ match.gold }}</span>
+            </div>
+
+        </div>
+
+        <div class="time-match-wrapper">
+
+            <span class="map">{{ match.map }}</span>
+            <span class="duration">{{ match.matchDuration }} - {{ match.matchDate }}</span>
+
+        </div>
+
+    </li>
+
+</ul>
+
+<aside class="recently-champions">
+
+    <span class="recently-title">Recently played champions</span>
+
+    <div class="champions">
+
+        <div *ngFor="let champion of recentlyChampions" class="champion">
+
+            <img class="champion-picture" src="{{ champion.champion.picture }}">
+            <img class="banner-mastery" src="./../../../../../assets/images/profile/banner-mastery.png">
+            <img class="mastery" src="./../../../../../assets/images/profile/mastery-seven.png">
+            <span class="percent">{{ champion.percent }}%</span>
+            <div class="win-rate-wrapper">
+                <span class="win-rate-title">Win rate</span>
+                <span [ngClass]="{'positive': champion.winRate > 50, 'negative': 50 > champion.winRate}" class="win-rate">{{ champion.winRate }}%</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <span class="separator"></span>
+
+    <div class="recent-activity-wrapper">
+
+        <span class="activity-title">Recent activity</span>
+
+        <div class="bars">
+
+            <div *ngFor="let activity of recentActivity" class="bar-wrapper">
+                <div class="bar">
+                    <span style="height: {{activity.percent}}%" class="bar-content"></span>
+                </div>
+                <img src="./../../../../../assets/images/profile/{{ activity.class }}.png">
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>

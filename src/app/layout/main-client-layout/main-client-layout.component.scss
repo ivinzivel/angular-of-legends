@@ -33,7 +33,7 @@
 
 .video-background-visible {
 
-    opacity: .2;
+    opacity: .05;
 
 }
 
@@ -1363,5 +1363,11 @@ app-chat {
 .chat-open {
 
     bottom: 0;
+
+}
+
+.item-desabled {
+
+    cursor: not-allowed;
 
 }

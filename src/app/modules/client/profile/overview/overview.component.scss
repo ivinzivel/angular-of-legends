@@ -1,0 +1,245 @@
+.profile-info {
+
+    width: calc( 100% - 380px);
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    li {
+
+        color: #beb088;
+        font-size: .8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0 2rem 4rem 2rem;
+        height: 230px;
+        position: relative;
+        cursor: default !important;
+
+        img {
+
+            padding-top: 4rem;
+            display: block;
+            position: relative;
+
+        }
+
+        .banner, .honor, .trophy {
+
+            bottom: -28px;
+
+        }
+
+        .rank {
+
+            width: 130px;
+            bottom: 6px;
+
+
+        }
+
+        .subtitle {
+
+            color: #f0e6d2;
+            width: 100%;
+            font-size: 28px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            margin: 0 auto;
+
+        }
+
+        .mastery-wrapper {
+
+            position: relative;
+            bottom: -25px;
+
+            img {
+
+                margin: 0 auto;
+
+            }
+
+            .champion-image {
+
+                width: 80px;
+                border: 2px solid #95732e;
+                border-radius: 50%;
+                padding: 0;
+                position: relative;
+                bottom: 14px;
+                z-index: 1;
+                margin-top: 75px;
+
+            }
+
+            .banner {
+
+                width: 70px;
+                position: absolute;
+                bottom: -4px;
+                left: 22px;
+                z-index: 0;
+
+            }
+
+            .mastery {
+
+                position: absolute;
+                z-index: 2;
+                bottom: -18px;
+                left: 32px;
+
+            }
+
+        }
+
+        .mastery-popover {
+
+            opacity: 0;
+            z-index: -2;
+            background-color: hsla(210, 90%, 4%, 0.500);
+            width: 650px;
+            border: 2px solid #463714;
+            position: absolute;
+            left: -262px;
+            bottom: 333px;
+            transition-duration: .2s;
+            transform: translateY(20px);
+            padding: 2rem;
+            backdrop-filter: blur(12px);
+
+            .popover-title {
+
+                color: #f0e6d2;
+                font-size: 18px;
+                
+            }
+
+            .highest-champion-mastery {
+
+                margin: 1rem 100px;
+                display: flex;
+                justify-content: space-between;
+
+                .mastery-wrapper {
+    
+                    width: 250px;
+                    transform: scale(.9);
+
+                    .champion-image {
+
+                        margin-top: 0;
+
+                    }
+
+                    .banner {
+
+                        bottom: 133px;
+                        left: 39px;
+    
+                    }
+    
+                    .mastery {
+
+                        bottom: 112px;
+                        left: 50px;
+    
+                    }
+
+                    .mastery-info {
+
+                        text-align: center;
+
+                        .champion-name {
+    
+                            color: #f0e6d2;
+                            font-size: 18px;
+                            display: block;
+                            margin-top: 2rem;
+    
+                        }
+
+                        .champion-points {
+    
+                            font-size: 14px;
+                            display: block;
+                            margin-top: 1rem;
+                            font-weight: lighter;
+    
+                        }
+
+                        .champion-best-grade {
+    
+                            font-size: 14px;
+                            display: block;
+                            margin-top: .5rem;
+                            font-weight: lighter;
+                            text-transform: initial;
+                            padding-bottom: 2rem;
+    
+                        }  
+
+                    }
+
+                    &:nth-child(2) {
+    
+                        transform: scale(1.05);
+    
+                    }
+
+                }
+
+            }
+
+            &::after {
+
+                content: '';
+                width: 30px;
+                height: 19px;
+                position: absolute;
+                background-image: url('./../../../../../assets/images/profile/popover-detail.png');
+                bottom: -19px;
+                left: calc(50% - 15px);
+
+            }
+
+        }
+
+        &:hover {
+
+            background: linear-gradient(0deg, rgba(235, 235, 244, 0.1348914566) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ebebf4",endColorstr="#ffffff",GradientType=1);
+            cursor: pointer;
+            transition-duration: 0.2s;
+
+            .mastery-popover {
+
+                opacity: 1;
+                z-index: 2;
+                transform: translateY(0);
+
+                .mastery-wrapper {
+
+                    position: relative;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .rank-item {
+
+        .subtitle { font-size: 12px }
+
+    }
+
+}

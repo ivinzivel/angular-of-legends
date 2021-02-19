@@ -1,0 +1,87 @@
+@import './../../../../../assets/scss/menu-component.scss';
+
+.overlay-background-visible {
+
+    opacity: .6 !important;
+
+}
+
+.overlay-background {
+
+    background-color: #000000;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    transition-duration: .5s;
+
+}
+
+.banner-visible {
+
+    top: 478px !important;
+
+}
+
+.banner {
+
+    position: absolute;
+    top: -400px;
+    transform: scale(1.1);
+    left: 40px;
+    transition-duration: .5s;
+
+    .player-informations {
+
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        padding-top: 200px;
+        text-align: center;
+
+        .player-name {
+
+            color: #f0e6d2;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+
+        }
+
+        .rank-image {
+
+            width: 200px;
+            padding-top: 2rem;
+            position: relative;
+            z-index: 2;
+
+        }
+
+        .rank-tier {
+
+            color: white;
+            z-index: 2;
+            display: block;
+            position: relative;
+            top: -68px;
+
+
+        }
+
+        .profile-image {
+
+            width: 126px;
+            display: block;
+            z-index: 1;
+            border-radius: 50%;
+            margin: -201px auto;
+
+        }
+
+    }
+
+}

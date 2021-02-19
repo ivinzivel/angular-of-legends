@@ -242,7 +242,7 @@
 
     <div class="lined-circle-wrapper">
         <img class="lined-circle" src="./assets/images/champion-select/lined-circle.png">
-        <div *ngIf="loadOutPeriod && currentChampionSelected !== null" style="background-image: url('{{ currentChampionSelected.coverPicture }}')" class="current-champion-selected"></div>
+        <div *ngIf="loadOutPeriod && currentChampionSelected !== null" [ngClass]="adjustChampion(currentChampionSelected.name)" style="background-image: url('{{ currentChampionSelected.coverPicture }}')" class="current-champion-selected"></div>
     </div>
 
     <div *ngIf="loadOutPeriod && currentChampionSelected !== null" class="champion-finalization">

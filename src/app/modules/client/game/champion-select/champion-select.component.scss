@@ -1067,18 +1067,6 @@ main {
 
     }
 
-    #modelViewer {
-
-        width: 800px;
-
-        canvas {
-
-            width: 800px !important;
-
-        }
-
-    }
-
     .button-detail {
 
         position: absolute;
@@ -1188,7 +1176,6 @@ main {
             top: calc(50% - 450px);
             border-radius: 50%;
             filter: brightness(120%);
-            overflow: hidden;
 
         }
 
@@ -1413,3 +1400,90 @@ footer {
     }
 
 }
+
+
+
+.ahri { background-position: -550px -5px !important }
+.amumu { background-position: -550px -5px !important }
+.annie { background-position: -628px -5px !important }
+.ashe { background-position: -628px -5px !important }
+.azir { background-position: -619px -5px !important }
+.brand { background-position: -619px -5px !important }
+.braum { 
+
+    background-position: -1095px -5px !important;
+    background-size: 2000px !important;
+
+}
+.caitlyn { background-position: -619px -5px !important }
+.camille { 
+
+    background-position: -1095px -5px !important;
+    background-size: 2000px !important;
+
+}
+.cassiopeia { background-position: -619px -5px !important }
+.chogatch { background-position: -460px -5px !important }
+.corki { background-position: -619px -5px !important }
+.diana { background-position: -619px -5px !important }
+.drmundo { background-position: -619px -5px !important }
+.draven { background-position: -619px -5px !important }
+.ekko { background-position: -619px -5px !important }
+.elise { 
+
+    background-position: -990px -5px !important;
+    background-size: 2000px !important;
+
+}
+.ezreal { background-position: -619px -5px !important }
+.fiora { 
+
+    background-position: -990px -5px !important;
+    background-size: 2500px !important;
+
+}
+.fizz { background-position: -619px -5px !important }
+.galio { 
+
+    background-position: -480px 102px !important;
+    background-size: 2000px !important;
+
+}
+.gp { background-position: -619px -5px !important }
+.graves { background-position: -619px 110px !important }
+.illaoi { background-position: -526px 115px !important }
+.irelia { background-position: -325px 115px !important }
+.janna { background-position: -614px -10px !important }
+.jarvan {
+
+    background-position: -929px -5px !important;
+    background-size: 2000px !important;
+
+}
+.jhin { background-position: -462px 110px !important }
+.jinx { background-position: -568px 5px !important }
+.kaisa { background-position: -237px 102px !important }
+.kalista { background-position: -584px 68px !important }
+.katarina { background-position: -470px -37px !important }
+.kayle { background-position: -363px 118px !important }
+.kayn { background-position: -311px -8px !important }
+.khazix { 
+    
+    background-position: -929px -222px !important;
+    background-size: 2000px !important;
+
+}
+.kindred { background-position: -550px !important }
+.kled { background-position: -536px 72px !important }
+.kogmaw { background-position: -597px -61px !important }
+.leona { background-position: -619px 68px !important }
+.lucian { background-position: -619px 43px !important }
+.lux { background-position: -501px 21px !important }
+.malphite { background-position: -573px -51px !important }
+.malzahar { background-position: -501px 104px !important }
+.mordekaiser { background-position: -275px 116px !important }
+.morgana { background-position: -145px 30px !important }
+.nami { background-position: -618px 30px !important }
+.nunu { background-position: -618px -106px !important }
+.orianna { background-position: -618px 107px !important }
+.poppy { background-position: -618px 98px !important }
