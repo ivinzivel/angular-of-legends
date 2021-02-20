@@ -1,0 +1,47 @@
+.warning {
+
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    h1 {
+
+        color: white;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 2rem;
+
+    }
+
+    p {
+
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+
+    }
+
+}
+
+@media only screen and (max-width: 1350px) {
+
+    .warning {
+
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+
+    }
+
+}

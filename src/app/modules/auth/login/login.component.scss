@@ -197,6 +197,7 @@
     opacity: 0;
     transition-duration: .5s;
     animation: FadeIn .5s forwards;
+    overflow: auto;
 
     @keyframes FadeIn {
         
@@ -216,6 +217,7 @@
 
     img {
 
+        padding-top: 120px;
         width: 200px;
 
     }
@@ -273,6 +275,7 @@
         padding: 1rem 4rem;
         border-radius: 16px;
         transition-duration: .2s;
+        margin-bottom: 120px;
         cursor: pointer;
         
         &:hover {

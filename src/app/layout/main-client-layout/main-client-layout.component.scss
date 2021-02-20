@@ -1429,10 +1429,12 @@ app-chat {
     opacity: 0;
     z-index: -2;
     transition-duration: .5s;
+    overflow: auto;
 
     img {
 
         width: 200px;
+        margin-top: 120px !important;
         margin-bottom: 2rem;
 
     }
@@ -1497,6 +1499,7 @@ app-chat {
         padding: 1rem 4rem;
         border-radius: 16px;
         transition-duration: .2s;
+        margin-bottom: 120px;
         cursor: pointer;
         
         &:hover {
