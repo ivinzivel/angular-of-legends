@@ -15,8 +15,6 @@ export class LoadingComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.allyTeam)
-
   }
 
 
@@ -283,8 +281,6 @@ export class LoadingComponent implements OnInit {
   @HostListener('document:mousemove', ['$event']) 
 
   onMouseMove(mouseTrack) {
-
-    console.log(mouseTrack)
 
     let offsetX = mouseTrack.pageX / 100
     

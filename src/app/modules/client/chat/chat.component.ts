@@ -26,7 +26,6 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(Friends)
     this.friends = Friends
 
   }
@@ -44,8 +43,6 @@ export class ChatComponent implements OnInit {
   sendMessage() {
 
     if(this.messageForm.value.message !== null) {
-
-      console.log(Friends[this.currentChat.id - 1])
 
       Friends[this.currentChat.id - 1].messages.push({ text: this.messageForm.value.message, type: 'user' })
       this.messageForm.reset()

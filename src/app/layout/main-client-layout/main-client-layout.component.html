@@ -284,7 +284,7 @@
             <img src="../../assets/images/aside-icons/missions.png">
             <img src="../../assets/images/aside-icons/voice.png">
             <span class="client-version">V 1.0</span>
-            <img  class="bug" src="../../assets/images/aside-icons/bug.png">
+            <img (click)="changeBugModalVisibility()" class="bug" src="../../assets/images/aside-icons/bug.png">
 
         </footer>
 
@@ -299,3 +299,14 @@
 </main>
 
 <app-chat [ngClass]="{'chat-open': chat}" [currentChat]="currentChat"></app-chat>
+
+<div [ngClass]="{'modal-visible': bugModal}" class="modal">
+
+    <img src="https://external-preview.redd.it/wriDatZOwSGRrWQs0c0qQpF1-FdPVZvLKtf6L5OIBGQ.png?auto=webp&s=05ee4c1c9520b4650aeea95151a6fd4a660485ac">
+
+    <h1>Found a <b>Kha'Zix?</b></h1>
+    <h2><a href="https://www.linkedin.com/in/ivin-rodrigues-a49113187/" target="_blank">Contact me </a>  or  <a href="https://github.com/IvinRodrigues/AngularOfLegends" target="_blank">create a pull request</a></h2>
+
+    <button (click)="changeBugModalVisibility()">Close</button>
+
+</div>

@@ -58,8 +58,6 @@ export class MatchHistoryComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    console.log([ Items[0], Items[4], Items[5] ,Items[8] ,Items[3] ])
-
   }
 
 

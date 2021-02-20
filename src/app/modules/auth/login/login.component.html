@@ -8,8 +8,9 @@
 
         <form [formGroup]="loginForm" (ngSubmit)="makeLogin()">
 
-            <input formControlName="username" (keyup)="usernameIdentify()" type="text">
+            <input formControlName="username" id="username" (keyup)="usernameIdentify()" type="text">
             <label [ngClass]="{'label-top': haveCharacters}" for="username">Username</label>
+            <small>Enter a fictitious username!<br>This application is not connected with Riot Games' APIS because of its usage policy.</small>
 
             <button [ngClass]="{'button-enabled': haveCharacters}" type="submit">
                 <img src="/assets/images/auth/arrow-right.png">
@@ -18,5 +19,21 @@
         </form>
 
     </aside>
+
+</div>
+
+<div [ngClass]="{'modal-close': !modal}" class="modal">
+
+    <img src="https://i.redd.it/r6ysbhckzd811.png">
+
+    <h2>Hey Summoner, welcome to</h2>
+    <h1><b>Angular</b> of Legends</h1>
+    <p>This is a project for <b>educational purposes only</b>.<br>
+    League of Legends is a registered trademark of Riot Games, inc. I am in no way affiliated with, associated with or endorsed by Riot Games, inc. 
+    All copyrights, image marks and service marks belong to their respective owners.<br>
+    In no way do I intend to monetize this project. <b>It was created just to test my Front-End and Angular skills :)</b>.
+    </p>
+
+    <button (click)="closeModal()">Close</button>
 
 </div>

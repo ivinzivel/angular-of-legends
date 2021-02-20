@@ -185,8 +185,6 @@ export class ChampionSelectComponent implements OnInit {
 
     } while( this.allyBans.length < 4 )
 
-    console.log('Bans alidados:', this.allyBans)
-
     do {
 
       let randomChampion = this.champions[Math.floor(Math.random() * this.champions.length)]
@@ -226,8 +224,6 @@ export class ChampionSelectComponent implements OnInit {
         this.allyPicks.push(randomChampion)
   
       } while( this.allyPicks.length < 4 )
-
-      console.log('Picks Aliados', this.allyPicks)
 
     },2000 )
 
@@ -281,8 +277,6 @@ export class ChampionSelectComponent implements OnInit {
     document.getElementById('enemyBarWrapper').classList.add('blue-bar')
     document.getElementById('enemyBar').classList.add('bar-thirty-seconds')
     document.getElementById('enemyBar').style.width = '100%'
-
-    console.log(this.allyPicks)
 
     localStorage.setItem('playerPick', JSON.stringify(this.currentChampionSelected))
     localStorage.setItem('allyTeam', JSON.stringify(this.allyPicks))
@@ -373,8 +367,6 @@ export class ChampionSelectComponent implements OnInit {
       this.playerBan = this.currentChampionBanSelected
       this.champions[this.currentChampionBanSelectedIndex].selectable = false
 
-      console.log(this.champions[this.currentChampionBanSelectedIndex])
-
       this.initBanReviewPeriod()
 
     }
@@ -384,8 +376,6 @@ export class ChampionSelectComponent implements OnInit {
 
 
   pickChampion() {
-
-    console.log(this.enemyBans)
 
     if(this.currentChampionSelected !== null) {
 
@@ -426,8 +416,6 @@ export class ChampionSelectComponent implements OnInit {
   }
 
   adjustChampion(champion) {
-
-    console.log(champion)
 
     switch (champion) {
       case 'Ahri':

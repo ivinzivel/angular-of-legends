@@ -81,7 +81,6 @@
                 border: 2px solid #ededed;
                 border-radius: 8px;
                 padding: 14px 16px 4px;
-                margin-bottom: 8rem;
                 box-sizing: border-box;
 
                 &:focus {
@@ -124,6 +123,19 @@
     
             }
 
+            small {
+                
+                font-family: 'Roboto', sans-serif;
+                color: #fd0352;
+                margin-bottom: 8rem;
+                font-size: 14px;
+                width: 300px;
+                display: block;
+                margin-top: 14px;
+                text-align: center;
+
+            }
+
             button {
 
                 width: 80px;
@@ -150,6 +162,125 @@
                 }
 
             }
+
+        }
+
+    }
+
+}
+
+.modal-close {
+
+    opacity: 0 !important;
+    transform: scale(.5) !important;
+
+}
+
+.modal {
+
+    color: white;
+    background-color: #030619d4;
+    width: 80%;
+    height: 80%;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c7974a80;
+    border-radius: 16px;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transition-duration: .5s;
+    animation: FadeIn .5s forwards;
+
+    @keyframes FadeIn {
+        
+        0% {
+
+            transform: scale(.5);
+
+        }
+        100% {
+
+            opacity: 1;
+            transform: scale(1);
+
+        }
+
+    }
+
+    img {
+
+        width: 200px;
+
+    }
+
+    h1 {
+
+        color: #c7984a;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        b {
+
+            color: #fd0352;
+
+        }
+
+    }
+
+    h2 {
+
+        font-size: 1.2rem;
+        margin: 1rem 0;
+
+    }
+
+    p {
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        width: 500px;
+        margin-top: 2rem;
+        text-align: justify;
+
+        b {
+
+            color: #fd0352;
+            font-weight: bold;
+
+        }
+
+    }
+
+    button {
+
+        color: #ffffff80;
+        background-color: #fd035207;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border: 2px solid #fd03521c;
+        margin-top: 4rem;
+        padding: 1rem 4rem;
+        border-radius: 16px;
+        transition-duration: .2s;
+        cursor: pointer;
+        
+        &:hover {
+            
+            color: #ffffff;
+            background-color: #fd0352;
+            box-shadow: 0 0 20px #fd03527c;
+            transform: scale(1.1);
 
         }
 

@@ -24,6 +24,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
   queueTimeSeconds: any = 0
   matchAccepted: boolean = false
   matchDeclined: boolean = false
+  bugModal: boolean = false
 
   constructor(private backgroundService: BackgroundService,
               private playService: PlayService,
@@ -186,7 +187,6 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
       document.getElementById('matchFound').classList.add('match-found-visible')
       document.getElementById('progressBar').style.animationName = 'ProgressBar'
       this.inQueue = false
-      console.log('matchAccepted: '+this.matchAccepted+', matchDeclined: '+this.matchDeclined)
 
       setTimeout( () => { 
 
@@ -246,6 +246,14 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
       this.playService.changeQueueState(false)
 
     }
+
+  }
+
+
+
+  changeBugModalVisibility() {
+
+    this.bugModal = !this.bugModal
 
   }
 

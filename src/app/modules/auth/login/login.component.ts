@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  modal: boolean = true
   loginForm: FormGroup
   haveCharacters: boolean = false
 
@@ -44,8 +45,6 @@ export class LoginComponent implements OnInit {
 
   usernameIdentify() {
 
-    console.log(this.loginForm.value.username)
-
     if(this.loginForm.value.username !== null && this.loginForm.value.username?.length > 0) {
 
       this.haveCharacters = true
@@ -55,6 +54,14 @@ export class LoginComponent implements OnInit {
       this.haveCharacters = false
 
     }
+
+  }
+
+
+
+  closeModal() {
+
+    this.modal = false
 
   }
 

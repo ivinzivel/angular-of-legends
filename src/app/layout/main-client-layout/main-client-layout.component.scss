@@ -1398,3 +1398,116 @@ app-chat {
     opacity: .4;
 
 }
+
+
+.modal-visible {
+
+    opacity: 1 !important;
+    z-index: 12 !important;
+
+}
+
+
+.modal {
+
+    color: white;
+    background-color: #030619d4;
+    width: 60%;
+    height: 60%;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c7974a80;
+    border-radius: 16px;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    z-index: -2;
+    transition-duration: .5s;
+
+    img {
+
+        width: 200px;
+        margin-bottom: 2rem;
+
+    }
+
+    h1 {
+
+        color: white;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        b {
+
+            color: #fd0352;
+
+        }
+
+    }
+
+    h2 {
+
+        font-size: 1.2rem;
+        margin: 1rem 0;
+
+        a {
+
+            color: #0acbe6;
+            text-decoration: none;
+
+        }
+
+    }
+
+    p {
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        width: 500px;
+        margin-top: 2rem;
+        text-align: justify;
+
+        b {
+
+            color: #fd0352;
+            font-weight: bold;
+
+        }
+
+    }
+
+    button {
+
+        color: #ffffff80;
+        background-color: #fd035207;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        border: 2px solid #fd03521c;
+        margin-top: 4rem;
+        padding: 1rem 4rem;
+        border-radius: 16px;
+        transition-duration: .2s;
+        cursor: pointer;
+        
+        &:hover {
+            
+            color: #ffffff;
+            background-color: #fd0352;
+            box-shadow: 0 0 20px #fd03527c;
+            transform: scale(1.1);
+
+        }
+
+    }
+
+}
