@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/data/player';
 
 @Component({
   selector: 'app-profile',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  player: any = Player
   overview: boolean = true
 
   constructor() { }

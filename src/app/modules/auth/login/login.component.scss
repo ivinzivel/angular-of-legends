@@ -1,0 +1,158 @@
+.container {
+
+    background-image: url('https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt7225731dfb1a126a/60249b80f4a7946af0338313/LoL-Patch-Notes-11-4-Article-Banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+
+    .video-background {
+        
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+
+    }
+
+    aside {
+
+        background-color: #ffffffea;
+        border-right: 2px solid #ffffff44;
+        width: 400px;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        animation: FadeInLeft 1s forwards;
+
+        @keyframes FadeInLeft {
+            
+            0%{
+
+                transform: translateX(-400px);
+
+            }
+            100% {
+
+                opacity: 1;
+                transform: translateX(0);
+
+            }
+
+        }
+
+        .logo {
+
+            display: block;
+            margin-bottom: 4rem;
+
+        }
+
+        span {
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+
+        }
+
+        form {
+
+            position: relative;
+            margin: 0;
+
+            input {
+
+                width: 100%;
+                height: 58px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                font-weight: 900;
+                letter-spacing: 1px;
+                background-color: #ededed;
+                border: 2px solid #ededed;
+                border-radius: 8px;
+                padding: 14px 16px 4px;
+                margin-bottom: 8rem;
+                box-sizing: border-box;
+
+                &:focus {
+
+                    border: 2px solid black;
+                    background-color: transparent;
+
+                }
+
+                &:focus + label {
+
+                    transform: scale(.6);
+                    top: 7px;
+                    left: -10px;
+    
+                }
+    
+            }
+
+            .label-top {
+
+                transform: scale(.6);
+                top: 7px;
+                left: -10px;
+
+            }
+    
+            label {
+    
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                position: absolute;
+                top: 22px;
+                left: 16px;
+                transition-duration: .2s;
+                opacity: .6;
+    
+            }
+
+            button {
+
+                width: 80px;
+                height: 80px;
+                border: 2px solid #f2f2f2;
+                border-radius: 16px;
+                background-color: #ededed;
+                transition-duration: .2s;
+                cursor: not-allowed;
+
+            }
+
+            .button-enabled {
+
+                background-color: #d13639;
+                border-color: #d13639;
+
+                &:hover {
+
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    filter: brightness(150%);
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

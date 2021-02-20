@@ -11,10 +11,7 @@ export class LobbyComponent implements OnInit {
 
   inQueue: boolean = false
   roleSelected: string = null
-  myStyle: object = {};
-  myParams: object = {};
-  width: number = 100;
-  height: number = 100;
+  gameMode: string = null
 
   constructor(private backgroundService: BackgroundService,
               private playService: PlayService) {

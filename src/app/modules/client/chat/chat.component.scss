@@ -8,9 +8,44 @@
 
     .chat-list {
 
-        height: 100%;
+        height: 580px;
         width: 200px;
         display: inline-block;
+        overflow: auto;
+
+        .friend {
+
+            display: flex;
+            align-items: center;
+            padding: .5rem;
+            transition-duration: .2s;
+            cursor: pointer;
+
+            img {
+
+                width: 50px;
+                border: 2px solid #8e7341;
+                box-sizing: border-box;
+                border-radius: 50%;
+                margin-right: .5rem;
+
+            }
+
+            span {
+
+                font-size: 18px;
+                color: #e4dbc8;
+                font-family: "Roboto", sans-serif;
+
+            }
+
+            &:hover {
+
+                background-color: #ffffff23;
+
+            }
+
+        }
 
     }
 
@@ -53,17 +88,19 @@
                 width: 70%;
                 border-radius: 14px;
                 display: block;
-                padding: 1rem;
+                padding: .5rem;
+                margin: .5rem 0;
                 float: right;
                 transition-duration: .2s;
+                overflow-wrap: break-word;
 
-                &:hover {
+            }
+            
+            .friend-message {
 
-                    background-color: #8e7341a4;
-                    box-shadow: 0 0 20px #8e7341a4;
-                    transform: scale(1.02);
+                background-color: #37373757;
+                float: left;
 
-                }
 
             }
 

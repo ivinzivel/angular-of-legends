@@ -346,7 +346,7 @@ header {
             border-radius: 50%;
             border: 2px solid #aa9261;
             background-color: rgb(51, 51, 51);
-            opacity: .4;
+            opacity: 0;
             transition-duration: .2s;
             position: relative;
             z-index: 1;
@@ -365,7 +365,7 @@ header {
         .invite-friend-hidden {
 
             margin: 300px auto 0 auto;
-            opacity: 0;
+            opacity: 0 !important;
             z-index: -1 !important;
 
         }

@@ -36,10 +36,10 @@
 
         <ul>
 
-            <li> 
+            <li class="button-play-wrapper" routerLink="play" > 
                 
                 <img class="play-button-shape" src="../../assets/images/play-button/play-button-shape.png">
-                <img routerLink="play" class="play-button-click-area" src="../../assets/images/play-button/play-button-click-area.png">
+                <img class="play-button-click-area" src="../../assets/images/play-button/play-button-click-area.png">
                 <span class="play-button-text">Play</span>
             
             </li>
@@ -86,11 +86,12 @@
     <div class="user-information">
 
         <img src="../../assets/images/aside-icons/avatar-wrapper.png">
+        <img class="profile-image" src="{{ player.picture }}">
         <span class="user-level">287</span>
 
         <div class="user-wrapper">
 
-            <span class="user-nickname truncate">Ivinzivel</span>
+            <span class="user-nickname truncate">{{ player.name }}</span>
 
             <div class="user-status">
 
@@ -115,10 +116,7 @@
             <img class="mini-sr" src="./assets/images/lobby/mini-sr.png">
 
             <div class="players">
-                <img src="./assets/images/lobby/single-friend-icon.png">
-                <img src="./assets/images/lobby/single-friend-icon.png">
-                <img src="./assets/images/lobby/single-friend-icon.png">
-                <img src="./assets/images/lobby/single-friend-icon.png">
+                <img class="active" src="./assets/images/lobby/single-friend-icon.png">
                 <img src="./assets/images/lobby/single-friend-icon.png">
             </div>
 
@@ -135,7 +133,7 @@
 
             <img class="mini-sr" src="./assets/images/lobby/mini-sr.png">
 
-            <div class="time">{{queueTimeMinutes}}:{{queueTimeSeconds}}</div>
+            <div class="time">{{queueTimeMinutes}}:0{{queueTimeSeconds}}</div>
 
             <span class="queue-type">Estimated 1:20</span>
 
@@ -230,7 +228,7 @@
 
                                     <div class="friend-status-circle friend-status-circle-queue"></div>
 
-                                    <p>( Ranqueada )</p>
+                                    <p>( Ranked )</p>
 
                                     <p class="time">20:00</p>
 
@@ -249,10 +247,10 @@
 
                     </div>
 
-                    <li (click)="changeGeralVisibility()">General (20/{{amigosTotal}})</li>
+                    <li (click)="changeGeralVisibility()">General (9/{{allFriends}})</li>
                     <ul [ngClass]="{'friends-sublist-open': geral == true}" class="friends-sublist">
 
-                        <li *ngFor="let friend of friends; let i = index" id='friend{{friend.id}}' (click)="openChat(friend)" (mouseenter)="showPopover(friend.id)" (mouseleave)="hidePopover(friend.id)" >
+                        <li *ngFor="let friend of friends; let i = index" id='friend{{friend.id}}'  (click)="changeChatVisibility(friend)" (mouseenter)="showPopover(friend.id)" (mouseleave)="hidePopover(friend.id)" >
 
                             <span *ngIf="i == friends.length - 1">{{ ajustPopoversPosition() }}</span>
 
@@ -300,4 +298,4 @@
 
 </main>
 
-<app-chat [ngClass]="{'chat-open': chat}"></app-chat>
+<app-chat [ngClass]="{'chat-open': chat}" [currentChat]="currentChat"></app-chat>

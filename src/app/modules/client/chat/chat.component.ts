@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Friends } from 'src/data/friends'
 
 @Component({
   selector: 'app-chat',
@@ -7,9 +9,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
+  messageForm: FormGroup
+
+  @Input() currentChat: any = {}
+  friends: any
+
+  constructor() {
+
+    this.messageForm = new FormGroup({
+
+      message: new FormControl()
+
+    })
+
+  }
 
   ngOnInit(): void {
+
+    console.log(Friends)
+    this.friends = Friends
+
+  }
+
+
+
+  selectChat(friend) {
+
+    this.currentChat = friend
+
+  }
+
+
+
+  sendMessage() {
+
+    if(this.messageForm.value.message !== null) {
+
+      console.log(Friends[this.currentChat.id - 1])
+
+      Friends[this.currentChat.id - 1].messages.push({ text: this.messageForm.value.message, type: 'user' })
+      this.messageForm.reset()
+
+    }
+
   }
 
 }

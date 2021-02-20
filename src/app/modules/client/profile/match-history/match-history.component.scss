@@ -16,6 +16,8 @@
         border-bottom: .5px solid #ffffff35;
         box-sizing: border-box;
         transition-duration: .5s;
+        opacity: 0;
+        animation: FadeInLeft 1s forwards;
 
         .champion-image-wrapper {
 
@@ -41,7 +43,7 @@
                 border-radius: 50%;
                 position: absolute;
                 bottom: 0;
-                left: 52px;
+                left: 62px;
 
             }
 
@@ -106,7 +108,7 @@
 
                 .item {
 
-                    background-color: #1d1d1d;
+                    background-color: #1d1d1d5b;
                     background-position: center;
                     background-size: cover;
                     width: 42px;
@@ -188,6 +190,26 @@
 
         }
 
+        &:nth-child(2) { animation-delay: .1s; }
+        &:nth-child(3) { animation-delay: .2s; }
+        &:nth-child(4) { animation-delay: .3s; }
+        &:nth-child(5) { animation-delay: .4s; }
+        &:nth-child(6) { animation-delay: .5s; }
+        &:nth-child(7) { animation-delay: .6s; }
+        &:nth-child(8) { animation-delay: .7s; }
+        &:nth-child(9) { animation-delay: .8s; }
+        &:nth-child(10) { animation-delay: .9s; }
+        &:nth-child(11) { animation-delay: 1s; }
+        &:nth-child(12) { animation-delay: 1.1s; }
+        &:nth-child(13) { animation-delay: 1.2s; }
+        &:nth-child(14) { animation-delay: 1.3s; }
+        &:nth-child(15) { animation-delay: 1.4s; }
+        &:nth-child(16) { animation-delay: 1.5s; }
+        &:nth-child(17) { animation-delay: 1.6s; }
+        &:nth-child(18) { animation-delay: 1.7s; }
+        &:nth-child(19) { animation-delay: 1.8s; }
+        &:nth-child(20) { animation-delay: 1.9s; }
+
     }
 
 }
@@ -201,6 +223,8 @@
     right: 280px;
     text-align: center;
     padding-top: 1rem;
+    opacity: 0;
+    animation: FadeInRight 1s forwards;
 
     .recently-title {
 
@@ -364,10 +388,12 @@
                         background-color: #0acbe6;
                         box-shadow: 0 0 10px #0acce67a;
                         width: 10px;
-                        height: 80%;
+                        height: 2%;
                         left: 0;
                         bottom: 0;
                         position: absolute;
+                        transition-delay: .5s;
+                        transition-duration: .5s;
 
                     }
 
@@ -383,6 +409,40 @@
             }
 
         }
+
+    }
+
+}
+
+@keyframes FadeInLeft {
+
+    0% {
+
+        position: relative;
+        left: -40px;
+
+    }
+    100% {
+
+        opacity: 1;
+        position: relative;
+        left: 0px;
+
+    }
+
+}
+
+@keyframes FadeInRight {
+
+    0% {
+
+        transform: translateX(60px);
+
+    }
+    100% {
+
+        opacity: 1;
+        transform: translateX(0px);
 
     }
 

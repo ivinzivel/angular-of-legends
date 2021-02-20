@@ -1,0 +1,22 @@
+<div class="container">
+    
+    <aside>
+
+        <img class="logo" src="/assets/images/auth/minimalist-logo.png">
+
+        <span>Sign in</span>
+
+        <form [formGroup]="loginForm" (ngSubmit)="makeLogin()">
+
+            <input formControlName="username" (keyup)="usernameIdentify()" type="text">
+            <label [ngClass]="{'label-top': haveCharacters}" for="username">Username</label>
+
+            <button [ngClass]="{'button-enabled': haveCharacters}" type="submit">
+                <img src="/assets/images/auth/arrow-right.png">
+            </button>
+
+        </form>
+
+    </aside>
+
+</div>

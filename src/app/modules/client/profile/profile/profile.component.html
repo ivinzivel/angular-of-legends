@@ -14,10 +14,10 @@
 <div [ngClass]="{'banner-visible': overview}" class="banner">
     <div id='playerBanner' class="banner">
         <div class="player-informations">
-            <span class="player-name">Ivinzivel</span>
+            <span class="player-name">{{ player.name }}</span>
             <img class="rank-image" src="./assets/images/aside-icons/platina.png">
             <span class="rank-tier">II</span>
-            <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4791.jpg?image=q_auto:best&v=1518361200">
+            <img class="profile-image" src="{{ player.picture }}">
         </div>
         <img src="./assets/images/lobby/banner.png">
     </div>

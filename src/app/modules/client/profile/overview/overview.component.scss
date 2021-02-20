@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    overflow: hidden;
 
     li {
 
@@ -102,7 +103,6 @@
         .mastery-popover {
 
             opacity: 0;
-            z-index: -2;
             background-color: hsla(210, 90%, 4%, 0.500);
             width: 650px;
             border: 2px solid #463714;
@@ -113,6 +113,7 @@
             transform: translateY(20px);
             padding: 2rem;
             backdrop-filter: blur(12px);
+            z-index: -2;
 
             .popover-title {
 

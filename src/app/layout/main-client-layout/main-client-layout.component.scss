@@ -357,6 +357,19 @@
 
             display: inline-block;
 
+            .button-play-wrapper:hover {
+
+                cursor: pointer;
+
+                .play-button-click-area {
+
+                    filter: brightness(150%);
+                    transition-duration: .2s;
+
+                }
+
+            }
+
             li {
 
                 display: inline-block;
@@ -375,15 +388,8 @@
                     position: absolute;
                     top: 26px;
                     left: 78px;
-                    cursor: pointer;
                     transition-duration: .2s;
 
-                    &:hover {
-
-                        filter: brightness(150%);
-                        transition-duration: .2s;
-
-                    }
 
                 }
 
@@ -508,6 +514,8 @@
             display: inline-block;
             cursor: pointer;
             transition-duration: .2s;
+            position: relative;
+            z-index: 2;
 
             &:hover {
 
@@ -518,6 +526,16 @@
 
         }
 
+        .profile-image {
+
+            width: 76px;
+            position: absolute;
+            left: 0;
+            border-radius: 50%;
+            z-index: 1;
+
+        }
+
         .user-level {
 
             color: #a09b8c;
@@ -525,6 +543,7 @@
             position: absolute;
             left: 33.5px;
             top: 74px;
+            z-index: 3;
 
         }
 
@@ -675,6 +694,12 @@
                 display: inline-block;
                 position: absolute;
                 top: 32px;
+
+                .active {
+    
+                    opacity: 1;
+    
+                }
 
                 img {
 
@@ -1369,5 +1394,7 @@ app-chat {
 .item-desabled {
 
     cursor: not-allowed;
+    filter: grayscale(100%);
+    opacity: .4;
 
 }

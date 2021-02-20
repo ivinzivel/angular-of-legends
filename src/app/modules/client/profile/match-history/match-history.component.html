@@ -30,8 +30,7 @@
                 <span *ngIf="!match.items[4]" class="item"></span>
                 <span *ngIf="match.items[5]" style="background-image: url('{{ match.items[5].image }}')" class="item"></span>
                 <span *ngIf="!match.items[5]" class="item"></span>
-                <span *ngIf="match.items[6]" style="background-image: url('{{ match.items[6].image }}')" class="item"></span>
-                <span *ngIf="!match.items[6]" class="item"></span>
+                <span style="background-image: url('{{ match.trinket.image }}')" class="item"></span>
             </div>
 
             <div class="info">
@@ -84,7 +83,7 @@
 
             <div *ngFor="let activity of recentActivity" class="bar-wrapper">
                 <div class="bar">
-                    <span style="height: {{activity.percent}}%" class="bar-content"></span>
+                    <span id="{{activity.class}}" class="bar-content"></span>
                 </div>
                 <img src="./../../../../../assets/images/profile/{{ activity.class }}.png">
             </div>

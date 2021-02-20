@@ -2,6 +2,10 @@
 
     <ul class="chat-list">
 
+        <li *ngFor="let friend of friends" (click)="selectChat(friend)" class="friend">
+            <img src="{{ friend.profilePicture }}">
+            <span>{{ friend.name }}</span>
+        </li>
 
     </ul>
 
@@ -9,14 +13,14 @@
 
         <header>
 
-            <div class="friend-profile-image-border">
-                <img src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4770.jpg?image=q_auto:best&v=1518361200" class="friend-profile-image">
+            <div *ngIf="currentChat.profilePicture" class="friend-profile-image-border">
+                <img src="{{ currentChat.profilePicture }}" class="friend-profile-image">
             </div>
             <div class="friend-status-circle"></div>
 
             <div class="friend-informations">
 
-                <span class="friend-name truncate">Teste</span>
+                <span class="friend-name truncate">{{ currentChat.name }}</span>
 
             </div>
 
@@ -24,11 +28,13 @@
 
         <main>
 
-            <div class="message">Olá amigo tudo bem com você? Espero que sim :)</div>
+            <div *ngFor="let message of currentChat.messages" [ngClass]="{'friend-message': message.type == 'friend'}" class="message">{{ message.text }}</div>
 
         </main>
 
-        <input placeholder="Type here..." type="text">
+        <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+            <input formControlName="message" placeholder="Type here..." type="text">
+        </form>
 
     </div>
 
