@@ -845,6 +845,12 @@
 
     }
 
+    .scrollable-area-lobby {
+
+        height: calc(100vh - 200px);
+
+    }
+
     .scrollable-area {
 
         overflow: auto;
@@ -1246,7 +1252,7 @@
 
     footer {
 
-        height: 200px;
+        height: 47px;
         width: 99%;
         border: solid 1px #1e282d;
 

@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class LoadingComponent implements OnInit {
 
+  player: any = localStorage.getItem('username')
   playerPick: any = JSON.parse(localStorage.getItem('playerPick'))
   allyTeam: any = JSON.parse(localStorage.getItem('allyTeam'))
   enemyTeam: any = JSON.parse(localStorage.getItem('enemyTeam'))

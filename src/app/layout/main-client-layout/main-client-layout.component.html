@@ -157,7 +157,7 @@
 
     <div class="friend-list">
 
-        <div (scroll)="ajustPopoversPosition()" id="scrollableArea" class="scrollable-area">
+        <div (scroll)="ajustPopoversPosition()" id="scrollableArea" [ngClass]="{'scrollable-area-lobby': inLobby}" class="scrollable-area">
 
             <div class="group-area">
 

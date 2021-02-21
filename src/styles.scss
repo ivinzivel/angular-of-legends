@@ -78,3 +78,453 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@media only screen and (max-width: 1450px) {
+
+	app-main-client-layout {
+
+		.main-layout-horizontal-line {
+
+			top: 75px !important;
+
+		}
+
+		.main-header {
+
+			width: calc(100vw - 240px) !important;
+			height: 75px !important;
+
+			nav {
+
+				height: 75px;
+
+				ul {
+
+					height: 75px;
+					display: flex !important;
+					justify-content: flex-start;
+
+					.button-play-wrapper {
+
+						transform: scale(.8) translateY(-7px);
+						margin-right: -26px;
+
+					}
+
+					li {
+
+						font-size: 14px !important;
+						height: 100%;
+
+						a {
+
+							padding: 30px .5rem !important;
+
+						}
+
+					}
+
+				}
+
+				.right-list {
+
+					height: 75px;
+					top: 0 !important;
+
+					li {
+
+						a {
+
+							padding: 0 1rem !important;
+							display: block;
+
+							img {
+
+								width: 24px;
+								padding: 24px .5rem !important;
+
+							}
+
+						}
+
+						.divider { margin-top: 6px !important }
+
+					}
+
+					.money { 
+						
+						top: 9px !important;
+
+						img { width: 14px; }
+
+						span { font-size: 12px !important; }
+
+						.riot-points { margin-top: 6px; }
+
+					}
+
+				}
+
+			}
+
+		}
+
+		.main-aside {
+
+			width: 240px !important;
+
+			.user-information {
+
+				height: 75px;
+
+				.user-wrapper { 
+					
+					width: 145px !important;
+					height: 100% !important;
+
+					.user-nickname {
+
+						padding-top: 16px !important;
+
+					}
+					
+				}
+
+				.profile-image { width: 67px !important }
+
+				img {
+					
+					width: 66px;
+					margin: 2px !important;
+
+				}
+
+				.user-level {
+
+					left: 22px !important;
+					top: 55.6px !important;
+
+				}
+
+			}
+
+			.play-informations {
+
+				width: 240px !important;
+
+				.lobby, .queue { width: 208px !important; }
+
+			}
+
+			.menu-aside {
+
+				font-size: 14px;
+				
+				img { width: 16px }
+
+			}
+
+			.group-area {
+
+				li {
+
+					img { width: 30px; }
+					.group-name { font-size: 14px !important }
+
+				}
+
+			}
+
+			.scrollable-area {
+
+				height: calc(100vh - 162px) !important;
+
+			}
+
+			footer {
+
+				height: 43px !important;
+
+				.client-version { width: 63px !important }
+
+				img { width: 16px !important }
+
+			}
+
+		}
+
+		.match-found {
+
+			.external-circle { transform: scale(.7) !important }
+
+		}
+
+	}
+
+	.component-menu {
+
+		margin-top: 5rem !important;
+
+	}
+
+	.main-content {
+
+		width: calc(100% - 304px) !important;
+
+		
+		.content {
+			
+			height: calc(100% - 132px) !important;
+
+		}
+
+	}
+
+	app-profile {
+
+		.banner.banner-visible {
+			
+			transform: scale(.8) !important;
+			top: 357px !important;
+
+		}
+
+		.content {
+
+			.profile-info {
+
+				transform: scale(0.8) translate(60px, 59px);
+				width: calc(100% - 190px) !important;
+
+				.delay2 {
+
+					.subtitle {
+
+						top: 30px !important;
+
+					}
+
+				}
+
+				.mastery-wrapper {
+
+					.banner { left: 6px !important }
+
+					.mastery { 
+						
+						bottom: -24px !important;
+    					left: 17px !important;
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	app-play-menu {
+
+		app-pvp {
+
+			ul {
+
+				li {
+
+					img { width: 100px !important }
+
+					.game-type { margin-top: .8rem !important }
+
+					.game-title {
+						
+						font-size: 20px !important;
+						padding-bottom: 1.5rem !important;
+
+					}
+
+					.game-title-lg {
+
+						padding-bottom: 2.75rem !important;
+
+					}
+
+					.game-description {
+
+						font-size: 16px !important;
+
+					}
+
+					.game-options { transform: scale(0.8) translate(-26px, -32px) }
+
+				}
+
+			}
+
+		}
+
+	}
+
+	app-lobby {
+
+		header {
+
+			margin-top: 5rem !important;
+
+		}
+
+		.banners {
+
+			.banner {
+				
+				width: 253px !important;
+
+				img { width: 100%; }
+
+				.player-informations {
+
+					transform: scale(.8);
+					padding-top: 131px !important;	
+
+					.role-select-button {
+
+						img { width: auto !important; }
+
+					}
+
+				}
+			
+			}
+
+		}
+
+		.role-select {
+
+			background: none !important;
+			transform: scale(.8);
+			height: 250px !important;
+			top: 305px !important;
+			
+			.role-select-button{
+
+				margin-top: 100px !important;
+
+			}
+
+			.mid, .top, .sup, .adc, .jg, .fill { height: auto !important; }
+
+			.mid { top: 10px !important; }
+
+			.jg, .adc { top: 80px !important; }
+
+			.top, .sup { top: 140px !important; }
+
+			.fill { top: 190px !important; }
+
+		}
+
+	}
+
+	app-loading {
+
+		overflow: hidden;
+
+		.teams {
+
+			transform: scale(.7);
+
+			ul {
+				
+				flex-wrap: nowrap !important;
+			
+			}
+
+		}
+
+	}
+
+	app-match-history {
+
+		.match-history {
+
+			width: calc(100% - 422px) !important;
+
+			.match {
+
+				.champion-image-wrapper {
+
+					img { width: 60px !important; }
+
+				}
+
+				.champion-level {
+					
+					font-size: 14px !important;
+					left: 50px !important;
+				
+				}
+				
+				.info-match-wrapper {
+
+					padding-left: 12px;
+
+					.match-status {
+
+						font-size: 16px !important;
+
+					}
+
+					.match-mode { font-size: 14px !important; }
+
+				}
+
+				.spells {
+
+					img { width: 25px !important; }
+
+				}
+
+				.overview-match-wrapper {
+
+					width: 266px !important;
+					padding-left: 12px;
+
+					.item {
+
+						width: 36px !important;
+						height: 35px !important;
+
+					}
+
+					span { font-size: 14px !important; }
+
+				}
+
+				.time-match-wrapper {
+
+					display: none;
+
+				}
+
+			}
+
+		}
+
+		.recently-champions {
+
+			overflow: auto;
+			width: 350px !important;
+			height: calc(100% - 156px) !important;
+
+			.recent-activity-wrapper {
+
+				padding-bottom: 24px;
+
+			}
+
+		}
+
+	}
+
+}

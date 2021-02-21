@@ -20,6 +20,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
   friends: any = Friends
   allFriends: number = this.friends.length
   inQueue: boolean = false
+  inLobby: boolean = false
   queueTimeMinutes: number = 0
   queueTimeSeconds: any = 0
   matchAccepted: boolean = false
@@ -48,7 +49,8 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
         if(response == true) {
 
-          document.getElementById('scrollableArea').style.height = 'calc(100vh - 314px)'
+          this.inLobby = true
+          // document.getElementById('scrollableArea').style.height = 'calc(100vh - 314px)'
           document.getElementById('menuAside').style.marginTop = '115px'
           document.getElementById('playInformations').style.right = '0'
 
@@ -57,7 +59,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
           document.getElementById('playInformations').style.right = '-280px'
           setTimeout( () => {
 
-            document.getElementById('scrollableArea').style.height = 'calc(100vh - 200px)'
+            // document.getElementById('scrollableArea').style.height = 'calc(100vh - 200px)'
             document.getElementById('menuAside').style.marginTop = '0'
 
           }, 100)
