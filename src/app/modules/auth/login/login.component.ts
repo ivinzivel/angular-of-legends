@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SoundService } from '../../client/sound.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
   haveCharacters: boolean = false
 
-  constructor( private route: Router) {
+  constructor( private route: Router,
+               private soundService: SoundService ) {
 
     this.loginForm = new FormGroup({
 
@@ -26,6 +28,9 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.soundService.playSound('zed')
+
   }
 
 
@@ -61,6 +66,7 @@ export class LoginComponent implements OnInit {
 
   closeModal() {
 
+    this.soundService.playSound('tf')
     this.modal = false
 
   }

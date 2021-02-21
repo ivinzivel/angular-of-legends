@@ -9,6 +9,42 @@
 
 }
 
+.back-home {
+
+    right: 1rem !important;
+    opacity: 1;
+
+}
+
+a {
+
+    color: #938f83;
+    background-color: #1e2328;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    display: inline-block;
+    border: 2px solid #c8aa6d;
+    transition-duration: 0.2s;
+    z-index: 2;
+    cursor: pointer;
+    position: fixed;
+    transition-duration: 1s;
+    bottom: 1rem;
+    right: -12rem;
+    opacity: 0;
+
+    &:hover {
+
+        transform: scale(1.1);
+        filter: brightness(120%);
+
+    }
+
+}
+
 .container {
 
     width: 100%;
@@ -16,6 +52,7 @@
     backdrop-filter: blur(6px);
     background: rgb(0,224,255);
     background: linear-gradient(180deg, rgba(0, 225, 255, 0.200) 0%, rgba(135,105,139,0) 50%, rgba(255,0,36,0.200) 100%);
+    overflow: hidden;
 
     .teams {
 

@@ -3,7 +3,7 @@
     <span>Ranked solo/duo</span>
     <span>Draft</span>
     <span class="map">Summoner's rift 5v5</span>
-    <a (click)="cancelQueue()" routerLink="/client/play/pvp" class="button-client">Change mode</a>
+    <a (click)="cancelQueue()" (mouseenter)="playSound('changeGameModeButtonHover')" (click)="playSound('changeGameModeButtonClick')" routerLink="/client/play/pvp" class="button-client">Change mode</a>
 </header>
 
 <div class="banners">
@@ -20,7 +20,7 @@
             <img class="rank-image" src="./assets/images/aside-icons/platina.png">
             <span class="rank-tier">II</span>
             <img class="profile-image" src="https://opgg-static.akamaized.net/images/profile_icons/profileIcon4791.jpg?image=q_auto:best&v=1518361200">
-            <div [ngClass]="{'role-select-button-desabled': inQueue}" (click)="openRoleSelect()" class="role-select-button">
+            <div [ngClass]="{'role-select-button-desabled': inQueue}" (click)="openRoleSelect(); playSound('roleSelectButtonClick')" class="role-select-button">
                 <div *ngIf="roleSelected == null">
                     <div class="arrow-up"></div>
                     <div class="arrow-right"></div>
@@ -51,29 +51,29 @@
 <div id="roleSelect" class="role-select">
     <span class="mid">
         <span class="role-name">Middle</span>
-        <img (click)="selectRole('mid')" src="./assets/images/lobby/roles/mid.png">
+        <img (mouseenter)="playSound('roleSelectButtonLaneHover')" (click)="selectRole('mid'); playSound('roleSelectButtonLaneClick')" src="./assets/images/lobby/roles/mid.png">
     </span>
     <span class="adc">
-        <img (click)="selectRole('adc')" src="./assets/images/lobby/roles/adc.png">
+        <img (mouseenter)="playSound('roleSelectButtonLaneHover')" (click)="selectRole('adc'); playSound('roleSelectButtonLaneClick')" src="./assets/images/lobby/roles/adc.png">
         <span class="role-name">Bottom</span>
     </span>
     <span class="jg">
         <span class="role-name">Jungle</span>
-        <img (click)="selectRole('jg')" src="./assets/images/lobby/roles/jg.png">
+        <img (mouseenter)="playSound('roleSelectButtonLaneHover')" (click)="selectRole('jg'); playSound('roleSelectButtonLaneClick')" src="./assets/images/lobby/roles/jg.png">
     </span>
     <span class="sup">
-        <img (click)="selectRole('sup')" src="./assets/images/lobby/roles/sup.png">
+        <img (mouseenter)="playSound('roleSelectButtonLaneHover')" (click)="selectRole('sup'); playSound('roleSelectButtonLaneClick')" src="./assets/images/lobby/roles/sup.png">
         <span class="role-name">Support</span>
     </span>
     <span class="top">
         <span class="role-name">Top</span>
-        <img (click)="selectRole('top')" src="./assets/images/lobby/roles/top.png">
+        <img (mouseenter)="playSound('roleSelectButtonLaneHover')" (click)="selectRole('top'); playSound('roleSelectButtonLaneClick')" src="./assets/images/lobby/roles/top.png">
     </span>
     <span class="fill">
-        <img (click)="selectRole('fill')" src="./assets/images/lobby/roles/fill.png">
+        <img (mouseenter)="playSound('roleSelectButtonLaneHover')" (click)="selectRole('fill'); playSound('roleSelectButtonLaneClick')" src="./assets/images/lobby/roles/fill.png">
         <span class="role-name">Fill</span>
     </span>
-    <div (click)="closeRoleSelect()" class="role-select-button">
+    <div (click)="closeRoleSelect(); playSound('roleSelectButtonClick')" class="role-select-button">
         <div *ngIf="roleSelected == null">
             <div class="arrow-up"></div>
             <div class="arrow-right"></div>
@@ -91,13 +91,13 @@
 </div>
 
 <div class="confirm-button">
-    <img *ngIf="inQueue" (click)="cancelQueue()" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
+    <img *ngIf="inQueue" (mouseenter)="playSound('confirmButtonHover')" (click)="cancelQueue(); playSound('confirmButtonCancelClick')" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
     <span *ngIf="inQueue" class="title title-desabled">
         <span>Find match</span>
         <img class="confirm" src="./assets/images/confirm-button/confirm-button-click-area.png">
     </span>
-    <img *ngIf="!inQueue" (click)="closeLobby()" routerLink="/client/home" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
-    <span *ngIf="!inQueue" [ngClass]="{'title-desabled': roleSelected == null}" (click)="enterQueue()" class="title">
+    <img *ngIf="!inQueue" (mouseenter)="playSound('confirmButtonHover')" (click)="closeLobby(); playSound('confirmButtonCancelClick')" routerLink="/client/home" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
+    <span *ngIf="!inQueue" [ngClass]="{'title-desabled': roleSelected == null}" (mouseenter)="playSound('findMatchButtonHover')" (click)="enterQueue(); playSound('findMatchButtonClick')" class="title">
         <span>Find match</span>
         <img class="confirm" src="./assets/images/confirm-button/confirm-button-click-area.png">
     </span>

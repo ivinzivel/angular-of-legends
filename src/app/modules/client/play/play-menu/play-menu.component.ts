@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SoundService } from '../../sound.service';
 
 @Component({
   selector: 'app-play-menu',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayMenuComponent implements OnInit {
 
-  constructor() {}
+  constructor(private soundService: SoundService) {}
 
   ngOnInit(): void {
+  }
+
+
+
+  playSound(sound) {
+
+    this.soundService.playSound(sound)
+
   }
 
 }

@@ -30,10 +30,19 @@
     <h1><b>Angular</b> of Legends</h1>
     <p>This is a project for <b>educational purposes only</b>.<br>
     League of Legends is a registered trademark of Riot Games, inc. I am in no way affiliated with, associated with or endorsed by Riot Games, inc. 
-    All copyrights, image marks and service marks belong to their respective owners.<br>
+    All copyrights, image marks and service marks belong to their respective owners (Don't file a lawsuit against me please, I need to feed my cats).<br>
     In no way do I intend to monetize this project. <b>It was created just to test my Front-End and Angular skills :)</b>.
     </p>
 
     <button (click)="closeModal()">Close</button>
 
+</div>
+
+<div [ngClass]="{'warning-visible': !modal}" class="warning">
+    <img src="https://static.wikia.nocookie.net/leagueoflegends/images/2/2e/Nothing_Personal%21_Emote.png/revision/latest?cb=20200528005023">
+    <div class="text-wrapper">
+        <h1>Stop right there cowboy!</h1>
+        <h2>This is a Twisted Fate alert</h2>
+        <p>For a better experience please activate the sound :D<br><b>(please i did all the sound part too)</b></p>
+    </div>
 </div>

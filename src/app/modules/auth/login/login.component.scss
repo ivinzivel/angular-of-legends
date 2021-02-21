@@ -218,6 +218,28 @@
 
         padding-top: 20px;
         width: 200px;
+        animation: OwwntZed 2s infinite;
+
+        @keyframes OwwntZed {
+            
+            0% {
+
+                transform: scale(.95);
+
+            }
+            50% {
+
+                transform: scale(1);
+                filter: brightness(120%);
+
+            }
+            100% {
+
+                transform: scale(.95);
+
+            }
+
+        }
 
     }
 
@@ -283,6 +305,106 @@
             background-color: #fd0352;
             box-shadow: 0 0 20px #fd03527c;
             transform: scale(1.1);
+
+        }
+
+    }
+
+}
+
+.warning-visible {
+
+    top: 2rem !important;
+    opacity: 1 !important;
+
+}
+
+.warning {
+
+    position: fixed;
+    top: -14rem;
+    left: calc(50% - 311px);
+    z-index: 2;
+    background-color: #c7bf4a58;
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    padding: 2rem 2rem;
+    border-radius: 16px;
+    border: solid 2px #fd03521c;
+    transition-duration: .5s;
+    opacity: 0;
+
+    img {
+        
+        width: 150px;
+        display: inline-block;
+        animation: TwistedFateHeadBanger 2s infinite;
+
+        @keyframes TwistedFateHeadBanger {
+            
+            0% {
+
+                transform: rotate(6deg);
+
+            }
+            50% {
+
+                transform: rotate(-6deg);
+                filter: brightness(120%);
+
+            }
+            100% {
+
+                transform: rotate(6deg);
+
+            }
+
+        }
+    
+    }
+
+    .text-wrapper {
+
+        display: inline-block;
+        text-align: center;
+
+        h1 {
+
+            color: #e2db71;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-bottom: 1rem;
+            display: block;
+
+        }
+
+        h2 {
+
+            color: #c7bf4a;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-bottom: 1rem;
+            display: block;
+
+        }
+
+        p {
+
+            color: white;
+            font-family: "Roboto", sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            margin-left: 2rem;
+
+            b {
+
+                color: #00000052;
+                font-weight: bold;
+
+            }
 
         }
 

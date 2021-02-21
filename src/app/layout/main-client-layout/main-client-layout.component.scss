@@ -1429,6 +1429,7 @@ app-chat {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border: 2px solid #c7974a80;
     border-radius: 16px;
     box-sizing: border-box;
@@ -1438,11 +1439,124 @@ app-chat {
     transition-duration: .5s;
     overflow: auto;
 
-    img {
+    .image-wrapper {
 
-        width: 140px;
-        margin-top: 20px !important;
-        margin-bottom: 2rem;
+        position: relative;
+
+        .slipper {
+
+            position: absolute;
+            width: 85px;
+            animation: Slap 2s infinite;
+
+            @keyframes Slap {
+                0% {
+
+                    left: 16px;
+                    top: 56px;
+                    transform: scale(.9) rotate(0deg);
+                    filter: blur(0);
+
+                }
+                83% {
+
+                    filter: blur(0);
+
+                }
+                84% {
+
+                    filter: blur(4px);
+
+                }
+                85% {
+
+                    top: -24px;
+                    left: -24px;
+                    transform: scale(1.4) rotate(-45deg);
+
+                }
+                98% {
+
+                    filter: blur(4px);
+
+                }
+                100% {
+
+                    left: 16px;
+                    top: 56px;
+                    transform: scale(.9) rotate(0deg);
+                    filter: blur(0);
+
+                }
+            }
+
+        }
+
+        .khazix {
+
+            width: 140px;
+            margin-top: 20px !important;
+            margin-bottom: 2rem;
+            animation: DieCockroach 2s infinite;
+
+            @keyframes DieCockroach {
+                0% {
+
+                    transform: scale(1) translate(0);
+
+                }
+                94% {
+
+                    transform: scale(1) translate(0);
+
+                }
+                95% {
+
+                    transform: scale(1) translate(4px, -4px);
+                    -webkit-filter: none;
+                    filter: none;
+
+                }
+                94% {
+
+                    transform: scale(1.1) translate(-4px, 4px);
+
+                }
+                95% {
+
+                    transform: scale(1) translate(-4px, 4px);
+
+                }
+                96% {
+
+                    transform: scale(.9) translate(-4px, 8px);
+
+                }
+                97% {
+
+                    transform: scale(1) translate(8px, -4px);
+
+                }
+                98% {
+
+                    transform: scale(1.1) translate(-4px, 4px);
+
+                }
+                99% {
+
+                    transform: scale(1) translate(0);
+                    -webkit-filter: invert(40%) grayscale(100%) brightness(100%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+                    filter: grayscale(100%) brightness(100%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+
+                }
+                100% {
+
+                    transform: scale(1) translate(0);
+
+                }
+            }
+
+        }
 
     }
 

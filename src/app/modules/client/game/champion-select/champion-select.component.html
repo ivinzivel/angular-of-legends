@@ -226,7 +226,7 @@
     </div>
 
     <ul id="chamiponList" class="champion-list">
-        <li *ngFor="let champion of champions; let championIndex = index" [ngClass]="{'champion-desable': champion.selectable == false, 'champion-visible': champion.role == filter || filter == 'all'}" (click)="selectChampion(champion, championIndex)" class="champion">
+        <li *ngFor="let champion of champions; let championIndex = index" (mouseenter)="playSound('championSelectChampionHover')" [ngClass]="{'champion-desable': champion.selectable == false, 'champion-visible': champion.role == filter || filter == 'all'}" (click)="selectChampion(champion, championIndex); playSound('championSelectChampionClick')" class="champion">
             <img src="{{ champion.picture }}" class="champion-picture">
             <span class="champion-name">{{ champion.name }}</span>
             <span *ngIf="currentChampionSelected == champion" class="champion-select-frame">
@@ -257,12 +257,12 @@
     <img *ngIf="!declarePeriod && !banReviewPeriod && !loadOutPeriod" class="button-detail button-detail-left" src="./assets/images/champion-select/accept-button-detail.png">
     <img *ngIf="!declarePeriod && !banReviewPeriod && !loadOutPeriod" class="button-detail button-detail-right" src="./assets/images/champion-select/accept-button-detail.png">
     
-    <span *ngIf="pickPeriod" [ngClass]="{'accept-button-desabled ': !currentChampionSelected}" (click)="pickChampion()" class="accept-button">
+    <span *ngIf="pickPeriod" (mouseover)="playSound('confirmButtonHover')" [ngClass]="{'accept-button-desabled ': !currentChampionSelected}" (click)="pickChampion()" class="accept-button">
         <span>Lock in</span>
         <img src="./assets/images/champion-select/accept-button.png">
     </span>
     
-    <span *ngIf="banPeriod" [ngClass]="{'accept-button-desabled ': !currentChampionBanSelected}" (click)="banChampion()" class="accept-button">
+    <span *ngIf="banPeriod" (mouseover)="playSound('changeGameModeButtonHover')" [ngClass]="{'accept-button-desabled ': !currentChampionBanSelected}" (click)="banChampion()" class="accept-button">
         <span>Ban</span>
         <img src="./assets/images/champion-select/ban-button.png">
     </span>

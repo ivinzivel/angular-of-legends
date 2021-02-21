@@ -36,14 +36,14 @@
 
         <ul>
 
-            <li class="button-play-wrapper" routerLink="play" > 
+            <li class="button-play-wrapper" (mouseenter)="playSound('playButtonHover')" (click)="playSound('playButtonClick')" routerLink="play" > 
                 
                 <img class="play-button-shape" src="../../assets/images/play-button/play-button-shape.png">
                 <img class="play-button-click-area" src="../../assets/images/play-button/play-button-click-area.png">
                 <span class="play-button-text">Play</span>
             
             </li>
-            <li routerLink="home" routerLinkActive="item-background-active" class="item-background-hover"> <a class="item-link-formated">Home</a> </li>
+            <li routerLink="home" routerLinkActive="item-background-active" class="item-background-hover"> <a (click)="playSound('menuClick')" class="item-link-formated">Home</a> </li>
             <li class="item-background-hover"> <a class="item-link-formated item-desabled">Tft</a> </li>
             <li class="item-background-hover"> <a class="item-link-formated item-desabled">Clash</a> </li>
 
@@ -52,7 +52,7 @@
 
         <ul class="right-list">
 
-            <li class="item-background-hover" routerLink="profile" routerLinkActive="item-background-active">  <a> <img src="../../assets/images/header-icons/profile.png"> </a> </li>
+            <li class="item-background-hover" routerLink="profile" routerLinkActive="item-background-active">  <a> <img (click)="playSound('menuClick')" src="../../assets/images/header-icons/profile.png"> </a> </li>
             <li class="item-background-hover"> <a class="item-desabled"> <img src="../../assets/images/header-icons/collection.png"> </a> </li>
             <li class="item-background-hover"> <a class="item-desabled"> <img src="../../assets/images/header-icons/booty.png"> </a> </li>
             <li class="item-background-hover"> <a class="item-desabled"> <img src="../../assets/images/header-icons/shop.png"> </a> </li>
@@ -302,7 +302,10 @@
 
 <div [ngClass]="{'modal-visible': bugModal}" class="modal">
 
-    <img src="https://external-preview.redd.it/wriDatZOwSGRrWQs0c0qQpF1-FdPVZvLKtf6L5OIBGQ.png?auto=webp&s=05ee4c1c9520b4650aeea95151a6fd4a660485ac">
+    <div class="image-wrapper">
+        <img class="khazix" src="https://external-preview.redd.it/wriDatZOwSGRrWQs0c0qQpF1-FdPVZvLKtf6L5OIBGQ.png?auto=webp&s=05ee4c1c9520b4650aeea95151a6fd4a660485ac">
+        <img class="slipper" src="./../../../assets//images/aside-icons/slipper.png">
+    </div>
 
     <h1>Found a <b>Kha'Zix?</b></h1>
     <h2><a href="https://www.linkedin.com/in/ivin-rodrigues-a49113187/" target="_blank">Contact me </a>  or  <a href="https://github.com/IvinRodrigues/AngularOfLegends" target="_blank">create a pull request</a></h2>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BackgroundService } from '../../background.service';
 import { PlayService } from '../../play.service';
+import { SoundService } from '../../sound.service';
 
 @Component({
   selector: 'app-lobby',
@@ -14,7 +15,8 @@ export class LobbyComponent implements OnInit {
   gameMode: string = null
 
   constructor(private backgroundService: BackgroundService,
-              private playService: PlayService) {
+              private playService: PlayService,
+              private soundService: SoundService) {
 
     this.backgroundService.changeBackground({ 
       backgroundUrl: 'https://images2.alphacoders.com/913/thumb-1920-913622.jpg',
@@ -49,6 +51,7 @@ export class LobbyComponent implements OnInit {
     setTimeout( () => {
 
       document.getElementById('playerBanner').style.opacity = '1'
+      this.soundService.playSound('lobbyIntro')
 
       setTimeout( () => {
 
@@ -128,6 +131,14 @@ export class LobbyComponent implements OnInit {
 
       this.roleSelected = role
       document.getElementById('roleSelect').style.display = 'none'
+
+  }
+
+
+
+  playSound(sound) {
+
+    this.soundService.playSound(sound)
 
   }
 

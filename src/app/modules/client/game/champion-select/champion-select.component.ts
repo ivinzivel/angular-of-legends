@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Champions } from 'src/data/champions';
 import { Player } from 'src/data/player';
+import { SoundService } from '../../sound.service';
 
 @Component({
   selector: 'app-champion-select',
@@ -41,11 +42,16 @@ export class ChampionSelectComponent implements OnInit {
   championsAvaliables: any = []
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private soundService: SoundService) {
 
   }
 
   ngOnInit(): void {
+
+    this.pauseSound('matchFound')
+
+    setTimeout( () => {  this.playSound('championSelectIntro') }, 400)
 
     setTimeout( () => {
 
@@ -127,6 +133,8 @@ export class ChampionSelectComponent implements OnInit {
 
     this.declarePeriod = true
 
+    this.playSound('championSelectChampionsVisible')
+
     document.getElementById('assigned').style.opacity = '0' 
     document.getElementById('overlayBackground').style.opacity = '.6' 
     document.getElementById('mainContent').style.opacity = '1' 
@@ -154,6 +162,8 @@ export class ChampionSelectComponent implements OnInit {
     this.declarePeriod = false
     this.banPeriod = true
 
+    this.playSound('championSelectBanIntro')
+
     document.getElementById('overlayBackground').classList.add('overlay-background-ban')
     document.getElementById('allyBar').classList.add('bar-thirty-seconds')
     document.getElementById('enemyBar').classList.add('bar-thirty-seconds')
@@ -176,6 +186,8 @@ export class ChampionSelectComponent implements OnInit {
     this.banReviewPeriod = true
     this.timerActive = false
     this.timerNumber = 30
+
+    setTimeout( () => { this.playSound('championSelectBanReviewIntro') }, 4000 )
 
     do {
 
@@ -246,6 +258,9 @@ export class ChampionSelectComponent implements OnInit {
 
   initPickPeriod() {
 
+    this.playSound('championSelectPickIntro')
+    this.playSound('pickPeriodIntro')
+
     document.getElementById('allyBarWrapper').classList.remove('red-bar')
     document.getElementById('allyBarWrapper').classList.add('blue-bar')
     document.getElementById('allyBarWrapper').style.opacity = '1'
@@ -270,6 +285,8 @@ export class ChampionSelectComponent implements OnInit {
 
 
   initLoadOutPeriod() {
+
+    this.playSound('championSelectLoadoutIntro')
 
     this.loadOutPeriod = true
     document.getElementById('allyBar').classList.add('bar-thirty-seconds')
@@ -299,6 +316,20 @@ export class ChampionSelectComponent implements OnInit {
       this.timerNumber = this.timerNumber - 1
 
       if(this.timerNumber > 0) {
+
+        if(this.timerNumber < 6) {
+
+          if(this.declarePeriod == true) {
+
+            this.playSound('championSelectTimerCount')
+
+          } else {
+
+            this.playSound('championSelectTimer')
+
+          }
+
+        }
 
         this.initTimer()
 
@@ -360,7 +391,10 @@ export class ChampionSelectComponent implements OnInit {
   banChampion() {
 
     if(this.currentChampionBanSelected !== null) {
-    
+
+      this.playSound('changeGameModeButtonClick')
+      this.playSound('championSelectBan')
+      
       document.getElementById('chamiponList').style.opacity = '0'
       document.getElementById('chamiponList').style.zIndex = '-1'
 
@@ -378,6 +412,8 @@ export class ChampionSelectComponent implements OnInit {
   pickChampion() {
 
     if(this.currentChampionSelected !== null) {
+
+      this.playSound('championSelectPick')
 
       this.playerPick = true
       this.pickPeriod = false
@@ -402,6 +438,8 @@ export class ChampionSelectComponent implements OnInit {
 
 
   changeFilter(filter) {
+
+    this.playSound('championSelectChampionsFilter')
 
     if(this.filter == filter) {
 
@@ -649,6 +687,22 @@ export class ChampionSelectComponent implements OnInit {
       case 'Zyra':
         return 'three-hundred-pixels'
     }
+
+  }
+
+
+
+  playSound(sound) {
+
+    this.soundService.playSound(sound)
+
+  }
+
+
+
+  pauseSound(sound) {
+
+    this.soundService.pauseSound(sound)
 
   }
 

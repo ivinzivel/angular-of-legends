@@ -4,8 +4,8 @@
 
     <ul>
 
-        <li><a (click)="changeBannerVisible(true)" routerLinkActive="item-menu-active" routerLink="overview">Overview</a></li>
-        <li><a (click)="changeBannerVisible(false)" routerLinkActive="item-menu-active" routerLink="match-history">Match History</a></li>
+        <li><a (click)="changeBannerVisible(true); playSound('submenuClick')" routerLinkActive="item-menu-active" routerLink="overview">Overview</a></li>
+        <li><a (click)="changeBannerVisible(false); playSound('submenuClick')" routerLinkActive="item-menu-active" routerLink="match-history">Match History</a></li>
 
     </ul>
 

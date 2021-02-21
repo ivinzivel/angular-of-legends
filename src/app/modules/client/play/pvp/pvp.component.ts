@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackgroundService } from '../../background.service';
+import { SoundService } from '../../sound.service';
 
 @Component({
   selector: 'app-pvp',

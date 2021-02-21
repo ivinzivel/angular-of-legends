@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackgroundService } from 'src/app/modules/client/background.service';
 import { PlayService } from 'src/app/modules/client/play.service';
+import { SoundService } from 'src/app/modules/client/sound.service';
 import { Friends } from 'src/data/friends'
 import { Player } from 'src/data/player';
 
@@ -29,6 +30,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
   constructor(private backgroundService: BackgroundService,
               private playService: PlayService,
+              private soundService: SoundService,
               private router: Router) {
 
     this.backgroundService.getBackgroundObservable().subscribe(
@@ -102,6 +104,22 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
+  }
+
+
+
+  playSound(sound) {
+
+    this.soundService.playSound(sound)
+
+  }
+
+
+
+  pauseSound(sound) {
+
+    this.soundService.pauseSound(sound)
+
   }
 
 
@@ -185,11 +203,12 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
     }
 
-    if(this.queueTimeSeconds == 3) {
+    if(this.queueTimeSeconds == 5) {
 
       document.getElementById('matchFound').classList.add('match-found-visible')
       document.getElementById('progressBar').style.animationName = 'ProgressBar'
       this.inQueue = false
+      this.playSound('matchFound')
 
       setTimeout( () => { 
 
@@ -226,6 +245,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
   acceptMatch() {
     
+    this.playSound('matchFoundAcceptButtonClick')
     this.matchAccepted = true
     this.matchDeclined = false
     document.getElementById('progressBar').style.animationName = ''
@@ -241,6 +261,8 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
     if(this.matchAccepted == false) {
 
+      this.pauseSound('matchFound')
+      this.playSound('matchFoundDeclineButtonClick')
       this.matchAccepted = false
       this.matchDeclined = true
       this.playService.changeQueueState(false)
@@ -257,6 +279,12 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
   changeBugModalVisibility() {
 
     this.bugModal = !this.bugModal
+
+    if(this.bugModal == true) {
+      
+      this.playSound('khazix')
+
+    }
 
   }
 

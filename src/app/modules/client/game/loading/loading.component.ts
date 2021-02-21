@@ -11,10 +11,13 @@ export class LoadingComponent implements OnInit {
   playerPick: any = JSON.parse(localStorage.getItem('playerPick'))
   allyTeam: any = JSON.parse(localStorage.getItem('allyTeam'))
   enemyTeam: any = JSON.parse(localStorage.getItem('enemyTeam'))
+  backHome: boolean = false
 
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(() => {this.backHome = true}, 2000)
 
   }
 

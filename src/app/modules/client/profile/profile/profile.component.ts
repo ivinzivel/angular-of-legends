@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/data/player';
+import { SoundService } from '../../sound.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +12,7 @@ export class ProfileComponent implements OnInit {
   player: any = Player
   overview: boolean = true
 
-  constructor() { }
+  constructor(private soundService: SoundService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,14 @@ export class ProfileComponent implements OnInit {
   changeBannerVisible(condition) {
 
     this.overview = condition
+
+  }
+
+
+
+  playSound(sound) {
+
+    this.soundService.playSound(sound)
 
   }
 

@@ -11,8 +11,8 @@
 </nav>
 
 <div class="confirm-button">
-    <img routerLink="/client/home" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
-    <span routerLink="/client/play/lobby" class="title">
+    <img (mouseenter)="playSound('confirmButtonHover')" (click)="playSound('confirmButtonCancelClick')" routerLink="/client/home" class="cancel" src="./assets/images/confirm-button/confirm-button-cancel.png">
+    <span (mouseenter)="playSound('confirmButtonHover')" (click)="playSound('confirmButtonClick')" routerLink="/client/play/lobby" class="title">
         <span>Confirm</span>
         <img class="confirm" src="./assets/images/confirm-button/confirm-button-click-area.png">
     </span>
