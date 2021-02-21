@@ -1,7 +1,8 @@
 # AngularOfLegends
 
 Welcome to the Angular of Legends repository a league of legends client clone made entirely in Angular. Feel free to view or contribute to the project :D
-[Live demo](http://ivinrodrigues.com/) 
+
+[Live demo](http://angularoflegends.ivinrodrigues.com/) 
 
 ## Settings
 
