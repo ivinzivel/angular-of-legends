@@ -274,13 +274,21 @@ table {
 		
 		.content {
 			
-			height: calc(100% - 132px) !important;
+			height: calc(100% - 132px);
 
 		}
 
 	}
 
+	app-main-client-layout main app-profile .content { height: 100% !important; }
+
 	app-profile {
+
+		nav {
+
+			position: fixed !important;
+
+		}
 
 		.banner.banner-visible {
 			
@@ -293,8 +301,8 @@ table {
 
 			.profile-info {
 
-				transform: scale(0.8) translate(60px, 59px);
-				width: calc(100% - 190px) !important;
+				transform: scale(0.8) translate(60px, 80px);
+				width: calc(100% - 160px) !important;
 
 				.delay2 {
 
@@ -317,6 +325,27 @@ table {
 
 					}
 
+				}
+
+				.mastery-popover {
+		
+					transform: scale(.8) !important;
+					left: -288px !important;
+					bottom: 298px !important;
+
+					.banner {
+
+    					left: 39px !important;
+
+					}
+
+					.mastery { 
+
+						bottom: 112px !important;
+						left: 50px !important;
+
+					}
+		
 				}
 
 			}
@@ -524,6 +553,14 @@ table {
 			}
 
 		}
+
+	}
+	
+	.chat-open {
+
+		transform: scale(.8);
+		bottom: -51px !important;
+		right: 180px !important;
 
 	}
 
