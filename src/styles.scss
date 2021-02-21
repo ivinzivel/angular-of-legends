@@ -81,6 +81,12 @@ table {
 
 @media only screen and (max-width: 1450px) {
 
+	app-root app-main-client-layout .main-aside .friend-list .scrollable-area-lobby {
+
+		height: calc(100vh - 277px) !important;
+
+	}
+
 	app-main-client-layout {
 
 		.main-layout-horizontal-line {
@@ -280,15 +286,9 @@ table {
 
 	}
 
-	app-main-client-layout main app-profile .content { height: 100% !important; }
+	// app-main-client-layout main app-profile .content { height: 100% !important; }
 
 	app-profile {
-
-		nav {
-
-			position: fixed !important;
-
-		}
 
 		.banner.banner-visible {
 			
@@ -302,7 +302,9 @@ table {
 			.profile-info {
 
 				transform: scale(0.8) translate(60px, 80px);
-				width: calc(100% - 160px) !important;
+				position: fixed;
+				bottom: 0;
+				right: 214px;
 
 				.delay2 {
 
@@ -316,12 +318,14 @@ table {
 
 				.mastery-wrapper {
 
-					.banner { left: 6px !important }
+					position: relative;
+
+					.banner { left: calc(50% - 35px) !important }
 
 					.mastery { 
 						
 						bottom: -24px !important;
-    					left: 17px !important;
+    					left: calc(50% - 26px) !important;
 
 					}
 

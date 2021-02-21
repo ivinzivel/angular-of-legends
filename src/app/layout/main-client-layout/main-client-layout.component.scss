@@ -37,6 +37,14 @@
 
 }
 
+
+
+.scrollable-area-lobby {
+
+    height: calc(100vh - 315px) !important;
+
+}
+
 .match-found-visible {
 
     opacity: 1 !important;
@@ -845,12 +853,6 @@
 
     }
 
-    .scrollable-area-lobby {
-
-        height: calc(100vh - 200px);
-
-    }
-
     .scrollable-area {
 
         overflow: auto;
@@ -1426,7 +1428,6 @@ app-chat {
     z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border: 2px solid #c7974a80;
     border-radius: 16px;
@@ -1439,8 +1440,8 @@ app-chat {
 
     img {
 
-        width: 200px;
-        margin-top: 120px !important;
+        width: 140px;
+        margin-top: 20px !important;
         margin-bottom: 2rem;
 
     }
@@ -1501,11 +1502,11 @@ app-chat {
         font-weight: bold;
         letter-spacing: 2px;
         border: 2px solid #fd03521c;
-        margin-top: 4rem;
+        margin-top: 10px;
         padding: 1rem 4rem;
         border-radius: 16px;
         transition-duration: .2s;
-        margin-bottom: 120px;
+        margin-bottom: 20px;
         cursor: pointer;
         
         &:hover {

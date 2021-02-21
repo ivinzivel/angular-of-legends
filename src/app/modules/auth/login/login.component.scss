@@ -188,7 +188,6 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border: 2px solid #c7974a80;
     border-radius: 16px;
@@ -217,7 +216,7 @@
 
     img {
 
-        padding-top: 120px;
+        padding-top: 20px;
         width: 200px;
 
     }
@@ -275,7 +274,7 @@
         padding: 1rem 4rem;
         border-radius: 16px;
         transition-duration: .2s;
-        margin-bottom: 120px;
+        margin-bottom: 20px;
         cursor: pointer;
         
         &:hover {

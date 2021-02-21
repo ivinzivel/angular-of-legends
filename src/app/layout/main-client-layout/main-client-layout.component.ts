@@ -56,6 +56,7 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
         } else {
 
+          this.inLobby = false
           document.getElementById('playInformations').style.right = '-280px'
           setTimeout( () => {
 
