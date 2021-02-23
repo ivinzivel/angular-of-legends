@@ -1,4 +1,4 @@
-[Preview](https://angularoflegends.ivinrodrigues.com/assets/images/preview.png)
+![Preview](https://angularoflegends.ivinrodrigues.com/assets/images/preview.png)
 
 # AngularOfLegends
 
