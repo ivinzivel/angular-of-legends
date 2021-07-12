@@ -577,7 +577,7 @@
         .user-status { 
             
             font-family: 'Roboto', sans-serif;
-            display: block;
+            display: flex;
             margin-top: .5rem;
 
         }
@@ -598,9 +598,19 @@
 
         }
 
+        .user-status-input {
+            background-color: rgba(235,235,244,0.13489145658263302);
+            border: none;
+            width: 80%;
+            margin-left: 1em;
+            color: white;
+            font-family: FrizQuadrata;
+        }
+
         .user-status-circle {
 
-            display: inline-block;
+            display: flex;
+            margin: auto;
             width: 10px;
             height: 10px;
             border: solid 2px;
@@ -1634,4 +1644,8 @@ app-chat {
 
     }
 
+}
+
+.hidden {
+    display: none !important;
 }
