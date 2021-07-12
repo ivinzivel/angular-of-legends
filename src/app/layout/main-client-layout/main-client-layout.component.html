@@ -96,8 +96,8 @@
             <div class="user-status">
 
                 <span class="user-status-circle" [ngClass]="{'user-status-circle-afk': onlineStatus == false}" (click)="changeOnlineStatus()"></span>
-                <span class="user-status-message truncate" [ngClass]="{'user-status-message-afk': onlineStatus == false}">"status"</span>
-
+                <span class="user-status-message truncate" [ngClass]="{'user-status-message-afk': onlineStatus == false, 'hidden': statusToggle == true}" (click)="changeStatusToggle(); statusMessage = ''">{{statusMessage}}</span>
+                <input class="user-status-input" [ngClass]="{'hidden': statusToggle == false}" [(ngModel)]="statusMessage" (change)="changeStatusToggle()" type="text" />
             </div>
 
         </div>

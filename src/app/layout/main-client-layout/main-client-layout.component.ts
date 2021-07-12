@@ -27,6 +27,8 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
   matchAccepted: boolean = false
   matchDeclined: boolean = false
   bugModal: boolean = false
+  statusMessage: string = 'Change status'
+  statusToggle: boolean = false;
 
   constructor(private backgroundService: BackgroundService,
               private playService: PlayService,
@@ -136,7 +138,11 @@ export class MainClientLayoutComponent implements OnInit, AfterViewInit {
 
   }
 
+  changeStatusToggle() {
 
+    this.statusToggle = !this.statusToggle;
+
+  }
 
   changeGeralVisibility() {
 
